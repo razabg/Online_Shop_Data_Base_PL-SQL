@@ -1,0 +1,78 @@
+CREATE TABLE Sellers (
+  name VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for name
+  seller_id INT NOT NULL,
+  phone VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for phone numbers
+  address VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for address
+  PRIMARY KEY (seller_id)
+);
+
+CREATE TABLE Categories (
+  category_id INT NOT NULL,
+  category_name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for category name
+  description VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for description (optional)
+  PRIMARY KEY (category_id)
+);
+
+CREATE TABLE OrderDetails (
+  product_id INT NOT NULL,
+  quantity INT NOT NULL,
+  delivery_method VARCHAR2(20) NOT NULL,
+  PRIMARY KEY (product_id)
+);
+
+CREATE TABLE Buyers (
+  buyer_id INT NOT NULL,
+  name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for name
+  email VARCHAR2(255) NOT NULL, -- Changed INT to VARCHAR2(255) for email
+  phone VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for phone number
+  address VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for address
+  PRIMARY KEY (buyer_id)
+);
+
+CREATE TABLE Products (
+  product_id INT NOT NULL,
+  product_name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for product name
+  description VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for description (optional)
+  price NUMBER(10,2) NOT NULL, -- Use NUMBER for price with precision (10) and scale (2)
+  category_id INT NOT NULL,
+  PRIMARY KEY (product_id),
+  FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+);
+
+CREATE TABLE Orders (
+  order_id INT NOT NULL,
+  order_date DATE NOT NULL, -- Use DATE for date
+  tracking_number VARCHAR2(20) NOT NULL,
+  product_id INT NOT NULL,
+  buyer_id INT NOT NULL,
+  PRIMARY KEY (order_id, product_id),
+  FOREIGN KEY (product_id) REFERENCES OrderDetails(product_id),
+  FOREIGN KEY (buyer_id) REFERENCES Buyers(buyer_id)
+);
+
+CREATE TABLE Reviews (
+  review_id INT NOT NULL,
+  rating NUMBER(10,1), -- Use NUMBER for rating with precision (10) and scale (1)
+  comment_text VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for comment
+  review_date DATE NOT NULL, -- Use DATE for date
+  product_id INT NOT NULL,
+  buyer_id INT NOT NULL,
+  PRIMARY KEY (review_id),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id),
+  FOREIGN KEY (buyer_id) REFERENCES Buyers(buyer_id)
+);
+
+CREATE TABLE sell (
+  seller_id INT NOT NULL,
+  product_id INT NOT NULL,
+  PRIMARY KEY (seller_id, product_id),
+  FOREIGN KEY (seller_id) REFERENCES Sellers(seller_id),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+CREATE TABLE include (
+  order_id INT NOT NULL,
+  product_id INT NOT NULL,
+  PRIMARY KEY (order_id, product_id),
+  FOREIGN KEY (order_id, product_id) REFERENCES Orders(order_id, product_id)
+);
