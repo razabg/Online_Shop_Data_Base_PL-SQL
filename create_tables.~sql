@@ -1,15 +1,15 @@
 CREATE TABLE Sellers (
-  seller_name VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for name
+  name VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for name
   seller_id INT NOT NULL,
   phone VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for phone numbers
-  address VARCHAR2(30) NOT NULL, -- Changed INT to VARCHAR2(200) for address
+  address VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for address
   PRIMARY KEY (seller_id)
 );
 
 CREATE TABLE Categories (
   category_id INT NOT NULL,
-  category_name VARCHAR2(20) NOT NULL, 
-  information VARCHAR2(50),
+  category_name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for category name
+  description VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for description (optional)
   PRIMARY KEY (category_id)
 );
 
@@ -22,17 +22,17 @@ CREATE TABLE OrderDetails (
 
 CREATE TABLE Buyers (
   buyer_id INT NOT NULL,
-  buyer_name VARCHAR2(200) NOT NULL, 
-  email VARCHAR2(255) NOT NULL, 
-  phone VARCHAR2(20) NOT NULL, 
-  address VARCHAR2(200) NOT NULL, 
+  name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for name
+  email VARCHAR2(255) NOT NULL, -- Changed INT to VARCHAR2(255) for email
+  phone VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for phone number
+  address VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for address
   PRIMARY KEY (buyer_id)
 );
 
 CREATE TABLE Products (
   product_id INT NOT NULL,
-  product_name VARCHAR2(200) NOT NULL, 
-  information VARCHAR2(50), 
+  product_name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for product name
+  description VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for description (optional)
   price NUMBER(10,2) NOT NULL, -- Use NUMBER for price with precision (10) and scale (2)
   category_id INT NOT NULL,
   PRIMARY KEY (product_id),
