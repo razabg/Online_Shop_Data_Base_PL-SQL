@@ -1,4 +1,4 @@
-CREATE TABLE Sellers (
+CREATE TABLE Sellers ( -- done
   seller_name VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for name
   seller_id INT NOT NULL,
   phone VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for phone numbers
@@ -6,21 +6,21 @@ CREATE TABLE Sellers (
   PRIMARY KEY (seller_id)
 );
 
-CREATE TABLE Categories (
+CREATE TABLE Categories ( -- done
   category_id INT NOT NULL,
-  category_name VARCHAR2(20) NOT NULL, 
+  category_name VARCHAR2(35) NOT NULL, 
   information VARCHAR2(50),
   PRIMARY KEY (category_id)
 );
 
-CREATE TABLE OrderDetails (
+CREATE TABLE OrderDetails ( --done need to genreate again
   product_id INT NOT NULL,
   quantity INT NOT NULL,
   delivery_method VARCHAR2(20) NOT NULL,
   PRIMARY KEY (product_id)
 );
 
-CREATE TABLE Buyers (
+CREATE TABLE Buyers ( --done
   buyer_id INT NOT NULL,
   buyer_name VARCHAR2(200) NOT NULL, 
   email VARCHAR2(255) NOT NULL, 
@@ -29,7 +29,7 @@ CREATE TABLE Buyers (
   PRIMARY KEY (buyer_id)
 );
 
-CREATE TABLE Products (
+CREATE TABLE Products ( -- done
   product_id INT NOT NULL,
   product_name VARCHAR2(200) NOT NULL, 
   information VARCHAR2(50), 
@@ -39,7 +39,7 @@ CREATE TABLE Products (
   FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
 
-CREATE TABLE Orders (
+CREATE TABLE Orders ( --done need to generate
   order_id INT NOT NULL,
   order_date DATE NOT NULL, -- Use DATE for date
   tracking_number VARCHAR2(20) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE Orders (
   FOREIGN KEY (buyer_id) REFERENCES Buyers(buyer_id)
 );
 
-CREATE TABLE Reviews (
+CREATE TABLE Reviews ( --done
   review_id INT NOT NULL,
   rating NUMBER(10,1), -- Use NUMBER for rating with precision (10) and scale (1)
   comment_text VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for comment

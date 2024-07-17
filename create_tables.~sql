@@ -1,45 +1,45 @@
-CREATE TABLE Sellers (
-  name VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for name
+CREATE TABLE Sellers ( -- done
+  seller_name VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for name
   seller_id INT NOT NULL,
   phone VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for phone numbers
-  address VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for address
+  address VARCHAR2(30) NOT NULL, -- Changed INT to VARCHAR2(200) for address
   PRIMARY KEY (seller_id)
 );
 
-CREATE TABLE Categories (
+CREATE TABLE Categories ( -- done
   category_id INT NOT NULL,
-  category_name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for category name
-  description VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for description (optional)
+  category_name VARCHAR2(35) NOT NULL, 
+  information VARCHAR2(50),
   PRIMARY KEY (category_id)
 );
 
-CREATE TABLE OrderDetails (
+CREATE TABLE OrderDetails ( --done
   product_id INT NOT NULL,
   quantity INT NOT NULL,
   delivery_method VARCHAR2(20) NOT NULL,
   PRIMARY KEY (product_id)
 );
 
-CREATE TABLE Buyers (
+CREATE TABLE Buyers ( --done
   buyer_id INT NOT NULL,
-  name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for name
-  email VARCHAR2(255) NOT NULL, -- Changed INT to VARCHAR2(255) for email
-  phone VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for phone number
-  address VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for address
+  buyer_name VARCHAR2(200) NOT NULL, 
+  email VARCHAR2(255) NOT NULL, 
+  phone VARCHAR2(20) NOT NULL, 
+  address VARCHAR2(200) NOT NULL, 
   PRIMARY KEY (buyer_id)
 );
 
-CREATE TABLE Products (
+CREATE TABLE Products ( -- done
   product_id INT NOT NULL,
-  product_name VARCHAR2(200) NOT NULL, -- Changed INT to VARCHAR2(200) for product name
-  description VARCHAR2(2000), -- Changed INT to VARCHAR2(2000) for description (optional)
+  product_name VARCHAR2(200) NOT NULL, 
+  information VARCHAR2(50), 
   price NUMBER(10,2) NOT NULL, -- Use NUMBER for price with precision (10) and scale (2)
   category_id INT NOT NULL,
   PRIMARY KEY (product_id),
   FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
 
-CREATE TABLE Orders (
+CREATE TABLE Orders ( --done
   order_id INT NOT NULL,
   order_date DATE NOT NULL, -- Use DATE for date
   tracking_number VARCHAR2(20) NOT NULL,
