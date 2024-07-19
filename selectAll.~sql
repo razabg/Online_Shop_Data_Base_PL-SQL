@@ -18,7 +18,6 @@ SELECT * FROM Products;
 -- Select data from Orders table
 SELECT * FROM Orders;
 
-
 -- Select data from Reviews table
 SELECT * FROM Reviews;
 
