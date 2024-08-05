@@ -1,4 +1,3 @@
-
 --checks if a buyer has ordered more than 10 items, applies a 10% discount,
 -- and then prints the buyer's name along with the original and discounted prices
 -- exlicit cursor , loop ,excepetion , conditions
@@ -25,6 +24,11 @@ CREATE OR REPLACE PROCEDURE ApplyDiscountAndPrint (
   v_discounted_price NUMBER(10, 2);
   v_discount_rate NUMBER := 0.1;  -- 10% discount
 BEGIN
+  
+   IF p_order_date < TO_DATE('01/01/2023', 'DD/MM/YYYY') THEN
+   RAISE_APPLICATION_ERROR(-20001, 'invalid date ' || TO_CHAR(p_order_date, 'DD/MM/YYYY'));
+   END IF;
+
   OPEN order_cursor;
   LOOP
     FETCH order_cursor INTO v_buyer_id, v_buyer_name, v_order_id, v_product_id, v_quantity, v_price;

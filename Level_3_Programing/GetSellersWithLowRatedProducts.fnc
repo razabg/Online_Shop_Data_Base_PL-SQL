@@ -10,6 +10,14 @@ CREATE OR REPLACE FUNCTION GetSellersWithLowRatedProducts(
 ) RETURN SYS_REFCURSOR IS
   v_sellers SYS_REFCURSOR;
 BEGIN
+  
+  IF p_rating < 1 OR p_rating > 5 THEN
+    RAISE_APPLICATION_ERROR(-20002, 'Invalid rating. Rating must be between 1 and 5.');
+  ELSIF p_start_date > p_end_date THEN
+    RAISE_APPLICATION_ERROR(-20003, 'Invalid date range. Start date must be before end date.');
+  END IF;
+  
+
   OPEN v_sellers FOR
     SELECT DISTINCT s.seller_id, se.seller_name, AVG(r.rating) OVER (PARTITION BY p.product_id) AS avg_rating
     FROM Reviews r
@@ -21,9 +29,7 @@ BEGIN
 
   RETURN v_sellers;
 EXCEPTION
-  WHEN NO_DATA_FOUND THEN
-    DBMS_OUTPUT.PUT_LINE('No sellers found with products rated below ' || p_rating || ' within the given date range.');
-    RETURN NULL;
+ 
   WHEN OTHERS THEN
     DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
     RETURN NULL;
