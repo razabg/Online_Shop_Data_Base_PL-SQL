@@ -1,5 +1,5 @@
 ﻿prompt PL/SQL Developer Export Tables for user C##RAZ@XE
-prompt Created by razab on יום שני 05 אוגוסט 2024
+prompt Created by razab on יום חמישי 08 אוגוסט 2024
 set feedback off
 set define off
 
@@ -83,8 +83,8 @@ prompt Creating ORDERDETAILS...
 create table ORDERDETAILS
 (
   product_id      INTEGER not null,
-  quantity        INTEGER not null,
-  delivery_method VARCHAR2(20) not null
+  delivery_method VARCHAR2(20) not null,
+  order_status    VARCHAR2(20)
 )
 tablespace SYSTEM
   pctfree 10
@@ -1885,784 +1885,784 @@ values (30, '3D Printing', '3D printers for creating objects.');
 commit;
 prompt 30 records loaded
 prompt Loading ORDERDETAILS...
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (396, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (176, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (249, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (388, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (113, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (154, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (335, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (67, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (207, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (338, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (76, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (178, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (450, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (255, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (28, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (441, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (47, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (431, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (285, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (83, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (146, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (289, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (302, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (300, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (145, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (494, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (1, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (185, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (294, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (175, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (10, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (234, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (349, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (470, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (293, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (279, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (363, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (100, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (99, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (372, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (84, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (283, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (68, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (17, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (457, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (452, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (209, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (128, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (49, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (208, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (309, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (244, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (262, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (483, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (87, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (358, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (298, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (152, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (360, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (80, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (444, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (287, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (267, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (318, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (328, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (367, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (405, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (101, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (333, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (162, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (171, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (97, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (356, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (88, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (46, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (65, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (340, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (350, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (74, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (459, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (66, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (436, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (461, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (23, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (57, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (484, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (361, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (427, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (260, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (129, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (263, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (275, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (140, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (201, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (134, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (122, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (225, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (482, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (130, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (276, 10, 'pick up from store');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (396, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (176, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (249, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (388, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (113, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (154, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (335, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (67, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (207, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (338, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (76, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (178, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (450, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (255, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (28, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (441, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (47, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (431, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (285, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (83, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (146, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (289, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (302, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (300, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (145, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (494, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (1, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (185, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (294, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (175, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (10, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (234, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (349, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (470, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (293, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (279, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (363, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (100, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (99, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (372, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (84, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (283, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (68, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (17, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (457, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (452, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (209, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (128, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (49, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (208, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (309, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (244, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (262, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (483, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (87, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (358, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (298, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (152, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (360, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (80, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (444, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (287, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (267, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (318, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (328, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (367, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (405, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (101, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (333, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (162, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (171, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (97, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (356, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (88, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (46, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (65, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (340, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (350, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (74, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (459, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (66, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (436, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (461, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (23, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (57, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (484, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (361, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (427, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (260, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (129, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (263, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (275, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (140, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (201, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (134, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (122, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (225, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (482, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (130, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (276, 'pick up spots', 'Shipped');
 commit;
 prompt 100 records committed...
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (186, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (448, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (331, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (203, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (266, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (475, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (170, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (195, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (282, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (378, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (222, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (403, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (286, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (359, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (366, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (330, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (226, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (36, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (299, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (95, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (337, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (123, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (199, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (292, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (224, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (77, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (144, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (241, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (291, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (177, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (18, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (306, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (14, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (121, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (278, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (63, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (197, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (420, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (69, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (490, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (460, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (467, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (126, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (307, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (192, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (212, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (462, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (39, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (387, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (56, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (301, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (264, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (493, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (391, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (281, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (206, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (102, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (480, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (142, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (397, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (464, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (365, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (45, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (165, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (246, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (316, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (478, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (313, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (20, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (168, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (114, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (324, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (105, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (329, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (439, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (85, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (92, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (139, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (158, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (362, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (91, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (19, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (236, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (346, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (304, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (109, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (187, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (334, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (491, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (62, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (446, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (400, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (196, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (110, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (342, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (96, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (370, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (251, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (395, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (402, 6, 'pick up from store');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (186, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (448, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (331, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (203, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (266, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (475, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (170, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (195, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (282, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (378, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (222, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (403, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (286, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (359, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (366, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (330, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (226, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (36, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (299, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (95, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (337, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (123, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (199, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (292, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (224, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (77, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (144, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (241, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (291, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (177, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (18, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (306, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (14, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (121, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (278, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (63, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (197, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (420, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (69, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (490, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (460, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (467, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (126, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (307, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (192, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (212, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (462, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (39, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (387, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (56, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (301, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (264, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (493, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (391, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (281, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (206, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (102, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (480, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (142, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (397, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (464, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (365, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (45, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (165, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (246, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (316, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (478, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (313, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (20, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (168, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (114, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (324, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (105, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (329, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (439, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (85, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (92, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (139, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (158, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (362, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (91, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (19, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (236, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (346, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (304, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (109, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (187, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (334, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (491, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (62, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (446, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (400, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (196, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (110, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (342, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (96, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (370, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (251, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (395, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (402, 'pick up spots', 'Pending');
 commit;
 prompt 200 records committed...
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (55, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (132, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (202, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (107, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (399, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (297, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (157, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (164, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (94, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (189, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (414, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (53, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (116, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (26, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (50, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (466, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (81, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (379, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (25, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (310, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (6, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (257, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (270, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (308, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (89, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (368, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (159, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (254, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (430, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (352, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (413, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (24, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (341, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (71, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (230, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (191, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (314, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (213, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (428, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (408, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (184, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (471, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (172, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (492, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (272, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (369, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (393, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (111, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (21, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (377, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (384, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (280, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (269, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (312, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (481, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (13, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (120, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (215, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (351, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (27, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (188, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (86, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (220, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (268, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (117, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (416, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (355, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (125, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (194, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (343, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (401, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (332, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (15, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (22, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (386, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (216, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (489, 5, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (259, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (41, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (232, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (7, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (412, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (423, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (277, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (245, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (221, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (104, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (354, 3, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (156, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (229, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (167, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (182, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (317, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (415, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (54, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (72, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (404, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (425, 8, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (147, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (371, 6, 'pick up from store');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (55, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (202, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (107, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (297, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (157, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (94, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (189, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (53, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (26, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (50, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (81, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (25, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (310, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (6, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (270, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (89, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (368, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (254, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (352, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (413, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (341, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (230, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (314, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (213, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (408, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (184, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (471, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (492, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (272, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (393, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (111, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (377, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (280, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (269, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (481, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (13, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (215, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (351, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (188, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (220, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (268, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (117, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (416, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (355, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (125, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (194, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (343, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (401, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (332, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (15, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (22, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (386, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (216, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (489, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (259, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (41, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (232, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (7, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (412, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (423, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (277, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (245, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (221, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (104, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (354, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (156, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (229, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (167, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (182, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (317, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (415, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (54, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (72, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (404, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (425, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (147, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (371, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (274, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (238, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (392, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (52, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (200, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (469, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (252, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (58, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (449, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (108, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (37, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (410, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (239, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (60, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (271, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (305, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (474, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (303, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (233, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (8, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (223, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (440, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (390, 'pick up from store', 'Pending');
 commit;
 prompt 300 records committed...
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (274, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (238, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (392, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (52, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (200, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (469, 5, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (252, 7, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (58, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (449, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (108, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (37, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (410, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (239, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (60, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (271, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (305, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (474, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (303, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (233, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (8, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (223, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (440, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (390, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (296, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (385, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (243, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (345, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (409, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (166, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (228, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (321, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (173, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (327, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (477, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (476, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (454, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (486, 2, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (30, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (115, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (437, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (422, 4, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (426, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (149, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (455, 6, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (453, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (179, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (160, 10, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (181, 8, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (311, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (487, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (59, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (11, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (143, 10, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (137, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (315, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (485, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (375, 7, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (218, 1, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (106, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (376, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (163, 6, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (319, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (394, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (398, 10, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (488, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (434, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (421, 8, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (383, 9, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (161, 3, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (34, 4, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (473, 1, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (31, 1, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (256, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (214, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (118, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (468, 9, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (33, 7, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (339, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (479, 2, 'home delivery');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (153, 3, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (98, 2, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (90, 9, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (242, 4, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (250, 6, 'pick up spots');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (204, 5, 'pick up from store');
-insert into ORDERDETAILS (product_id, quantity, delivery_method)
-values (472, 8, 'home delivery');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (296, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (385, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (243, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (345, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (409, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (166, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (228, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (321, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (173, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (327, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (477, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (476, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (454, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (486, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (30, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (115, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (437, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (422, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (426, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (149, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (455, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (453, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (179, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (160, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (181, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (311, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (487, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (59, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (11, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (143, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (137, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (315, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (485, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (375, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (218, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (106, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (376, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (163, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (319, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (394, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (398, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (488, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (434, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (421, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (383, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (161, 'pick up from store', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (34, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (473, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (31, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (256, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (214, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (118, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (468, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (33, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (339, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (479, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (153, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (98, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (90, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (242, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (250, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (204, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (472, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (132, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (399, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (164, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (414, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (116, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (466, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (379, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (257, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (308, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (159, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (430, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (24, 'home delivery', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (71, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (191, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (428, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (172, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (369, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (21, 'home delivery', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (384, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (312, 'pick up spots', 'Pending');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (120, 'pick up from store', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (27, 'pick up spots', 'Shipped');
+insert into ORDERDETAILS (product_id, delivery_method, order_status)
+values (86, 'pick up spots', 'Shipped');
 commit;
 prompt 386 records loaded
 prompt Loading ORDERS...
