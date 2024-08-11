@@ -13,7 +13,7 @@ ADD CONSTRAINT check_order_date_since_2023
 CHECK (order_date >= DATE '2023-01-01');
 
 
-INSERT INTO Orders (order_id,order_date, buyer_id) VALUES (1233456,DATE '2021-07-25',9999);
+INSERT INTO Orders (order_id,order_date, tracking_number, product_id, buyer_id) VALUES (1233456,DATE '2021-07-25', 65443321,1 ,9999);
 
 
 
@@ -24,4 +24,3 @@ CHECK (information IS NOT NULL);
 
 
 INSERT INTO Categories (category_id,category_name,information ) VALUES (31,'tashmishi kdoshy','');
-

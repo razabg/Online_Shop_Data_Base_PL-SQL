@@ -1,4 +1,4 @@
-﻿--function that receives a rating as a parameter and returns a list of sellers
+--function that receives a rating as a parameter and returns a list of sellers
 -- who have products with ratings below the given rating between the range of the param dates
 -- refcursor ,exception
 
@@ -19,8 +19,7 @@ BEGIN
   
 
   OPEN v_sellers FOR
-    SELECT DISTINCT s.seller_id, se.seller_name, AVG(r.rating) OVER (PARTITION BY p.product_id) AS avg_rating -- הפוקנציה פרטישן למעשה מחלקת את התוצאה לקבוצות עבור כל
-    -- חלק במקרה שלנו כל מוצר והפונקציה של הממוצע תחשב עבור כל מוצר את הדירוג שלו
+    SELECT DISTINCT s.seller_id, se.seller_name, AVG(r.rating) OVER (PARTITION BY p.product_id) AS avg_rating
     FROM Reviews r
     JOIN Products p ON r.product_id = p.product_id
     JOIN sell s ON p.product_id = s.product_id

@@ -134,8 +134,7 @@ WHERE
     OD.product_id IN (
         SELECT product_id 
         FROM Orders 
-        WHERE order_date >= TRUNC(SYSDATE, 'MM') - INTERVAL '1' MONTH --trunc cut the date for a specific format of date here first day of the curr month
-        -- interval = jump back one month
+        WHERE order_date >= TRUNC(SYSDATE, 'MM') - INTERVAL '1' MONTH
     );
 
 

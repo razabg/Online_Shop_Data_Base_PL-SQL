@@ -1,4 +1,4 @@
---orderdetails - new with order id primary key, orders - without product-id ,include products differnt key ref change description to information
+--orderdetails - new with order id primary key, orders - without product-id ,include products differnt key ref
 
 
 CREATE TABLE Sellers ( -- done gd file

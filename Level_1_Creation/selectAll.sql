@@ -18,7 +18,6 @@ SELECT * FROM Products;
 -- Select data from Orders table
 SELECT * FROM Orders;
 
-
 -- Select data from Reviews table
 SELECT * FROM Reviews;
 
@@ -27,14 +26,10 @@ SELECT * FROM sell;
 
 -- Select data from include table
 SELECT * FROM include_products;
-
+SELECT * FROM OrderDetails;
 -- End of selectAll.sql
 
 
-SELECT product_id,
-COUNT(*) AS review_count
-FROM Reviews
-GROUP BY 
-  product_id
-HAVING 
-  COUNT(*) > 1;
+SELECT *
+from orders
+where order_id = 547775847;

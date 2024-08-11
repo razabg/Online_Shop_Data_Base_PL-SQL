@@ -1,3 +1,5 @@
+-- the fucntion will update the prices of all the products from the given category
+
 CREATE OR REPLACE FUNCTION UpdatePricesByCategory (
   startDate IN DATE,
   categoryId IN INT
@@ -5,17 +7,12 @@ CREATE OR REPLACE FUNCTION UpdatePricesByCategory (
   CURSOR productCursor IS
     SELECT product_id, price
     FROM Products
-    WHERE category_id = categoryId AND available_date >= startDate;
+    WHERE category_id = categoryId AND available_date >= startDate ;
 
   productRecord productCursor%ROWTYPE;
   updatedCount INT := 0;
 
 BEGIN
-  -- Check if any products were updated
-  IF categoryId < 0 THEN
-    RAISE_APPLICATION_ERROR(-20004, 'invalid category');
-  END IF;
-  
   -- Open the cursor
   OPEN productCursor;
 
@@ -28,6 +25,7 @@ BEGIN
     UPDATE Products
     SET price = price * 1.05
     WHERE product_id = productRecord.product_id;
+    
 
     -- Increment the count of updated products
     updatedCount := updatedCount + 1;
@@ -36,15 +34,13 @@ BEGIN
   -- Close the cursor
   CLOSE productCursor;
 
-  -- Check if any products were updated
-  IF updatedCount = 0 THEN
-    RAISE_APPLICATION_ERROR(-20004, 'No products found for the given category and date range.');
-  END IF;
-
   -- Return a success message with the number of updated products
   RETURN 'Updated ' || updatedCount || ' products successfully.';
 
 EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    -- Handle the case where no matching products are found
+    RETURN 'No products found for the given category and date range.';
   WHEN OTHERS THEN
     -- Handle other unexpected errors
     RAISE_APPLICATION_ERROR(-20003, 'An unexpected error occurred: ' || SQLERRM);

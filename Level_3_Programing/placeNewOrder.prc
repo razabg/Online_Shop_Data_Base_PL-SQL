@@ -1,47 +1,69 @@
 CREATE OR REPLACE PROCEDURE PlaceNewOrder (
-  buyerId IN INT,
-  orderId IN INT,
-  orderDate IN DATE,
-  trackingNumber IN VARCHAR2,
-  product IN INT, 
-  quantity IN INT 
+  buyerId IN INT,              
+  orderId IN INT,             
+  orderDate IN DATE,           
+  trackingNumber IN VARCHAR2,  
+  products IN SYS.ODCINUMBERLIST, -- Input parameter: List of product IDs 
+  quantities IN SYS.ODCINUMBERLIST  -- Input parameter: List of quantities 
 ) IS
-  v_stock INT;
+  v_product_id INT;            -- Local variable 
+  v_quantity INT;              
+  v_stock INT;                 
 BEGIN
-  -- Start transaction
-  SAVEPOINT sp_before_order; -- save for rollback the action
+  -- Check if the buyer exists using EXISTS
+   BEGIN
+    SELECT 1 --check if there are any rows in the specified table.
+    INTO v_product_id
+    FROM Buyers
+    WHERE buyer_id = buyerId;
 
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      RAISE_APPLICATION_ERROR(-20002, 'Buyer with ID ' || buyerId || ' does not exist.');
+  END;
+  
+  SAVEPOINT sp_before_order;   -- Savepoint to allow rollback in case of errors
+  
+  INSERT INTO Orders (order_id, order_date, buyer_id)
+  VALUES (orderId, orderDate, buyerId); 
+
+  
+  INSERT INTO OrderDetails (order_id, delivery_method, tracking_number)
+  VALUES (orderId, 'home delivery', trackingNumber); 
+
+  -- Loop through each product in the products list
+  FOR i IN 1 .. products.COUNT LOOP
+    v_product_id := products(i);  -- Get the current product ID from the list
+    v_quantity := quantities(i);  -- Get the current quantity from the list
 
     -- Check stock
     SELECT p.stock
     INTO v_stock
     FROM Products p
-    WHERE p.product_id = product;
+    WHERE p.product_id = v_product_id; -- Query to get the stock of the current product
 
-    IF v_stock < quantity THEN
-      RAISE_APPLICATION_ERROR(-20001, 'Insufficient stock for product ' || product);
+    -- If there is not enough stock, raise an error
+    IF v_stock < v_quantity THEN
+      RAISE_APPLICATION_ERROR(-20001, 'Insufficient stock for product ' || v_product_id);
     END IF;
 
-    -- Insert into Orders table
-    INSERT INTO Orders (order_id, order_date, tracking_number, product_id, buyer_id)
-    VALUES (orderId, orderDate, trackingNumber, product, buyerId);
+    
+    INSERT INTO include_products (order_id, product_id, quantity)
+    VALUES (orderId, v_product_id, v_quantity); 
 
-    -- Update stock
+    
     UPDATE Products
-    SET stock = stock - quantity
-    WHERE product_id = product;
-
-    -- Insert into include_products table
-    INSERT INTO include_products (order_id, product_id,Quantity)
-    VALUES (orderId, product,quantity);
+    SET stock = stock - v_quantity
+    WHERE product_id = v_product_id; 
+  END LOOP;
 
   -- Commit transaction
-  COMMIT;
+  COMMIT; -- Commit the transaction if all operations succeed
 
 EXCEPTION
   WHEN OTHERS THEN
     -- Rollback to savepoint in case of error
-    ROLLBACK TO sp_before_order;
-    RAISE;
+    ROLLBACK TO sp_before_order; -- Rollback to the savepoint if any error occurs
+    RAISE; -- Re-raise the exception to propagate the error
 END PlaceNewOrder;
 /

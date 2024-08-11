@@ -1,5 +1,5 @@
---orderdetails - new with order id primary key, orders - without product-id ,include products differnt key ref change description to information
-
+﻿--orderdetails - new with order id primary key, orders - without product-id ,include products differnt key ref maybe need to delete. change description to information
+-- הקשר שאין להם טבלאות הם עם חץ עגול זאת אומרת מי שבכיוון הנגדי של החץ העגול יהיה את המפתח של הצד השני
 
 CREATE TABLE Sellers ( -- done gd file
   seller_name VARCHAR2(20) NOT NULL, -- Changed INT to VARCHAR2(20) for name
@@ -17,10 +17,12 @@ CREATE TABLE Categories ( -- done with file
 );
 
 CREATE TABLE OrderDetails ( --done need to gd file
-  product_id INT NOT NULL,
-  quantity INT NOT NULL,
+  order_id INT NOT NULL,
   delivery_method VARCHAR2(20) NOT NULL,
-  PRIMARY KEY (product_id)
+  tracking_number VARCHAR2(20) NOT NULL,
+  PRIMARY KEY (order_id),
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+  
 );
 
 CREATE TABLE Buyers ( --done mockaroo
@@ -35,9 +37,11 @@ CREATE TABLE Buyers ( --done mockaroo
 CREATE TABLE Products ( -- done txt file
   product_id INT NOT NULL,
   product_name VARCHAR2(200) NOT NULL, 
-  information VARCHAR2(50), 
+  status VARCHAR2(20), 
   price NUMBER(10,2) NOT NULL, -- Use NUMBER for price with precision (10) and scale (2)
   category_id INT NOT NULL,
+  stock INT ,
+  available_date date,
   PRIMARY KEY (product_id),
   FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
@@ -45,11 +49,8 @@ CREATE TABLE Products ( -- done txt file
 CREATE TABLE Orders ( --done gd files
   order_id INT NOT NULL,
   order_date DATE NOT NULL, -- Use DATE for date
-  tracking_number VARCHAR2(20) NOT NULL,
-  product_id INT NOT NULL,
   buyer_id INT NOT NULL,
-  PRIMARY KEY (order_id, product_id),
-  FOREIGN KEY (product_id) REFERENCES OrderDetails(product_id),
+  PRIMARY KEY (order_id),
   FOREIGN KEY (buyer_id) REFERENCES Buyers(buyer_id)
 );
 
@@ -78,6 +79,10 @@ CREATE TABLE sell (
 CREATE TABLE include_products (
   order_id INT NOT NULL,
   product_id INT NOT NULL,
+  quantity INT not null,
   PRIMARY KEY (order_id, product_id),
-  FOREIGN KEY (order_id, product_id) REFERENCES Orders(order_id, product_id)
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+  
+  
 );

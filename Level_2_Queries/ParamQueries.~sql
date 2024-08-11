@@ -41,8 +41,8 @@ LIKE LOWER(&<name = "name_pattern" hint = "write between %__%" default = "%sam%"
 
 
 
--- 4. Query with multiple parameters including a number of params.
---  return the reviews from certain date,rating and category
+-- 4. Query with multiple parameters including a number
+-- for filtering return the reviews from certain date,rating and category
 
 
 SELECT r.review_id,

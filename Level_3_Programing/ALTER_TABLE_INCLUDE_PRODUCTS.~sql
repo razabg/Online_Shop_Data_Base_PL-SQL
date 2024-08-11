@@ -11,9 +11,3 @@ ADD stock INT ;
 
 UPDATE products
 SET stock = FLOOR(DBMS_RANDOM.VALUE(1, 30));
-
-
-ALTER TABLE Products
-ADD available_date DATE;
-
-

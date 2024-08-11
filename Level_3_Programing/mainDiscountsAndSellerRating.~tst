@@ -1,5 +1,5 @@
 PL/SQL Developer Test script 3.0
-34
+36
 -- main to apply discount and print buyer information, and get sellers with low-rated products
 
 -- Declare local variables and cursors
@@ -32,7 +32,9 @@ BEGIN
 
   CLOSE v_sellers;
   
-
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
 END;
 5
 result
@@ -52,6 +54,6 @@ p_end_date
 -12
 p_order_date
 1
-01/01/2023
+01/01/2024
 12
 0

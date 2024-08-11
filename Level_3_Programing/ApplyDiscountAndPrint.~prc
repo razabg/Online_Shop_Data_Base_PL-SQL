@@ -1,4 +1,4 @@
---checks if a buyer has ordered more than 5 items, applies a 10% discount,
+--checks if a buyer has ordered more than 10 items, applies a 10% discount,
 -- and then prints the buyer's name along with the original and discounted prices
 -- exlicit cursor , loop ,excepetion , conditions
 
@@ -11,7 +11,7 @@ CREATE OR REPLACE PROCEDURE ApplyDiscountAndPrint (
     FROM Orders o
     JOIN include_products ip ON o.order_id = ip.order_id
     JOIN Buyers b ON o.buyer_id = b.buyer_id
-    JOIN Products p ON ip.product_id = p.product_id
+    JOIN Products p ON o.product_id = p.product_id
     WHERE o.order_date >= p_order_date;
 
   v_buyer_name Buyers.buyer_name%TYPE;
@@ -37,8 +37,8 @@ BEGIN
     -- Calculate total price for the order
     v_total_price := v_quantity * v_price;
 
-    -- Apply discount if quantity is greater than 5
-    IF v_quantity > 5 THEN
+    -- Apply discount if quantity is greater than 10
+    IF v_quantity > 10 THEN
       v_discounted_price := v_total_price * (1 - v_discount_rate);
     ELSE
       v_discounted_price := v_total_price; -- No discount
