@@ -2,14 +2,14 @@ PL/SQL Developer Test script 3.0
 34
 
 DECLARE
-  v_buyer_id INT := 99999999999; -- Assume buyer with ID 1
-  v_order_id INT := 2; -- New order ID
+  v_buyer_id INT := 9999; -- Assume buyer with ID 1
+  v_order_id INT := 313575; -- New order ID
   v_order_date DATE := SYSDATE; -- Current date
   v_tracking_number VARCHAR2(20) := 'TRACK12345'; -- Tracking number for the order
   
   -- Lists of product IDs and quantities
   v_products SYS.ODCINUMBERLIST := SYS.ODCINUMBERLIST(1, 2, 3); -- Product IDs
-  v_quantities SYS.ODCINUMBERLIST := SYS.ODCINUMBERLIST(2, 1, 3); -- Quantities for the products
+  v_quantities SYS.ODCINUMBERLIST := SYS.ODCINUMBERLIST(5, 1, 1); -- Quantities for the products
   result VARCHAR2(50); -- for the UpdatePricesByCategory
 
 BEGIN
@@ -55,11 +55,11 @@ quantity
 -4
 result
 0
-5
+-5
 startDate
 1
 01/01/2024
-12
+-12
 categoryId
 1
 1

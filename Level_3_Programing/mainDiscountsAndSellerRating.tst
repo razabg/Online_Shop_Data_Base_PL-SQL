@@ -1,5 +1,5 @@
 PL/SQL Developer Test script 3.0
-34
+44
 -- main to apply discount and print buyer information, and get sellers with low-rated products
 
 -- Declare local variables and cursors
@@ -7,7 +7,8 @@ DECLARE
   v_sellers SYS_REFCURSOR;  -- Cursor for fetching sellers with low-rated products
   v_seller_id INT; 
   v_seller_name VARCHAR2(50); 
-  v_avg_rating NUMBER(10, 2);  
+  v_avg_rating NUMBER(10, 2); 
+  v_empty_cursor BOOLEAN := TRUE;  -- Flag to check if cursor is empty 
 
 BEGIN
   -- Enable DBMS_OUTPUT with a buffer size of 1,000,000 bytes
@@ -26,13 +27,22 @@ BEGIN
     FETCH v_sellers INTO v_seller_id, v_seller_name, v_avg_rating;
     
     EXIT WHEN v_sellers%NOTFOUND;
+    
+    -- If we reach here, the cursor is not empty
+    v_empty_cursor := FALSE;
 
     DBMS_OUTPUT.PUT_LINE('Seller ID: ' || v_seller_id || ', Name: ' || v_seller_name || ', Average Rating: ' || v_avg_rating);
   END LOOP;
+  
+  IF v_empty_cursor THEN
+    DBMS_OUTPUT.PUT_LINE('No sellers found with low-rated products.');
+  END IF;
 
   CLOSE v_sellers;
   
-
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
 5
 result

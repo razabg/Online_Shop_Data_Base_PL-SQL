@@ -125,23 +125,49 @@ WHERE
      
      
      
---updates the delivery method for all orders placed in the last month.    --add order id of order details
+--updates the delivery method to 'home delivery' for all orders placed in the last month and bought more than 5 items for one of the order products
 UPDATE 
     OrderDetails OD
 SET 
-    delivery_method = 'pick up spots'
+    delivery_method = 'home delivery'
 WHERE 
-    OD.product_id IN (
-        SELECT product_id 
-        FROM Orders 
-        WHERE order_date >= TRUNC(SYSDATE, 'MM') - INTERVAL '1' MONTH --trunc cut the date for a specific format of date here first day of the curr month
+    
+    OD.order_id IN (
+        SELECT o.order_id
+        FROM Orders o 
+        join include_products ip ON ip.order_id = o.order_id 
+        WHERE o.order_date >= TRUNC(SYSDATE, 'MM') - INTERVAL '1' MONTH AND ip.quantity > 4  --trunc cut the date for a specific format of date here first day of the curr month
         -- interval = jump back one month
     );
+    
+    
+    
+-- update the stock of certain categroy's products
+UPDATE 
+    Products
+SET 
+    stock = stock + 10
+WHERE 
+    category_id =
+    (SELECT category_id
+     FROM Categories
+     WHERE category_name = 'Computer Accessories');
+     
 
 
-
-
-
+UPDATE 
+    OrderDetails OD
+SET 
+    order_status = 'pending'
+WHERE 
+    
+    OD.order_id = 313575;
+    
+    
+select *
+from orderdetails
+join orders o on o.order_id = orderdetails.order_id
+where o.order_id = 313575    
 
 
     

@@ -23,6 +23,7 @@ CREATE OR REPLACE PROCEDURE ApplyDiscountAndPrint (
   v_total_price NUMBER(10, 2);
   v_discounted_price NUMBER(10, 2);
   v_discount_rate NUMBER := 0.1;  -- 10% discount
+   v_empty_cursor BOOLEAN := TRUE; 
 BEGIN
   
    IF p_order_date < TO_DATE('01/01/2023', 'DD/MM/YYYY') THEN
@@ -33,6 +34,8 @@ BEGIN
   LOOP
     FETCH order_cursor INTO v_buyer_id, v_buyer_name, v_order_id, v_product_id, v_quantity, v_price;
     EXIT WHEN order_cursor%NOTFOUND;
+    
+    v_empty_cursor := FALSE;-- if we got here the curser is not empty
 
     -- Calculate total price for the order
     v_total_price := v_quantity * v_price;
@@ -50,6 +53,13 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Discounted Price: ' || v_discounted_price);
     DBMS_OUTPUT.PUT_LINE('-------------------------');
   END LOOP;
+  
+  
+  -- Check if cursor was empty and raise an error if true
+  IF v_empty_cursor THEN
+    RAISE_APPLICATION_ERROR(-20002, 'No orders found for the given date.');
+  END IF;
+  
   CLOSE order_cursor;
 
 EXCEPTION

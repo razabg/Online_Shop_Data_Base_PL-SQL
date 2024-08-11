@@ -2,8 +2,8 @@ PL/SQL Developer Test script 3.0
 34
 
 DECLARE
-  v_buyer_id INT := 35908723582350; -- Assume buyer with ID 1
-  v_order_id INT := 99999999999; -- New order ID
+  v_buyer_id INT := 99999999999; -- Assume buyer with ID 1
+  v_order_id INT := 2; -- New order ID
   v_order_date DATE := SYSDATE; -- Current date
   v_tracking_number VARCHAR2(20) := 'TRACK12345'; -- Tracking number for the order
   
@@ -58,8 +58,8 @@ result
 5
 startDate
 1
-01/01/2026
-5
+01/01/2024
+12
 categoryId
 1
 1

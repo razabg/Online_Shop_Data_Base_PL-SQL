@@ -28,8 +28,8 @@ BEGIN
   VALUES (orderId, orderDate, buyerId); 
 
   
-  INSERT INTO OrderDetails (order_id, delivery_method, tracking_number)
-  VALUES (orderId, 'home delivery', trackingNumber); 
+  INSERT INTO OrderDetails (order_id, delivery_method, tracking_number,Order_Status)
+  VALUES (orderId, 'home delivery', trackingNumber,'pending'); 
 
   -- Loop through each product in the products list
   FOR i IN 1 .. products.COUNT LOOP
