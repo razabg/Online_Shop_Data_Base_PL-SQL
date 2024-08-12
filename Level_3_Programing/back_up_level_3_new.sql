@@ -1,5 +1,5 @@
 ﻿prompt PL/SQL Developer Export Tables for user C##RAZ@XE
-prompt Created by razab on יום ראשון 11 אוגוסט 2024
+prompt Created by razab on יום שני 12 אוגוסט 2024
 set feedback off
 set define off
 
@@ -161,7 +161,8 @@ create table ORDERDETAILS
 (
   order_id        INTEGER not null,
   delivery_method VARCHAR2(20) not null,
-  tracking_number VARCHAR2(20) not null
+  tracking_number VARCHAR2(20) not null,
+  order_status    VARCHAR2(20)
 )
 tablespace SYSTEM
   pctfree 10
@@ -2705,8 +2706,10 @@ insert into ORDERS (order_id, order_date, buyer_id)
 values (2415235322223, to_date('11-08-2024 02:34:07', 'dd-mm-yyyy hh24:mi:ss'), 9999);
 insert into ORDERS (order_id, order_date, buyer_id)
 values (2415235324423324, to_date('11-08-2024 02:34:32', 'dd-mm-yyyy hh24:mi:ss'), 9999);
+insert into ORDERS (order_id, order_date, buyer_id)
+values (313575, to_date('11-08-2024 22:09:13', 'dd-mm-yyyy hh24:mi:ss'), 9999);
 commit;
-prompt 408 records loaded
+prompt 409 records loaded
 prompt Loading INCLUDE_PRODUCTS...
 insert into INCLUDE_PRODUCTS (order_id, product_id, quantity)
 values (51975, 114, 9);
@@ -4062,846 +4065,854 @@ insert into INCLUDE_PRODUCTS (order_id, product_id, quantity)
 values (2415235324423324, 2, 1);
 insert into INCLUDE_PRODUCTS (order_id, product_id, quantity)
 values (2415235324423324, 4, 1);
+insert into INCLUDE_PRODUCTS (order_id, product_id, quantity)
+values (313575, 1, 5);
+insert into INCLUDE_PRODUCTS (order_id, product_id, quantity)
+values (313575, 2, 1);
+insert into INCLUDE_PRODUCTS (order_id, product_id, quantity)
+values (313575, 3, 1);
 commit;
-prompt 671 records loaded
+prompt 674 records loaded
 prompt Loading ORDERDETAILS...
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (98999, 'home delivery', 'CMA-070');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (68992, 'pick up spots', 'IBB-114');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (19233, 'home delivery', 'CP-029');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82081, 'pick up from store', 'CMA-116');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (93085, 'pick up from store', 'MB-062');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90560, 'pick up spots', 'YS-022');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (84615, 'home delivery', 'SK-017');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (20985, 'home delivery', 'RD-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (74716, 'pick up spots', 'VC-035');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (40064, 'pick up spots', 'IBB-044');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (52694, 'pick up spots', 'SK-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (51465, 'pick up spots', 'UP-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (70761, 'home delivery', 'ABB-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48289, 'home delivery', 'CMA-116');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95682, 'home delivery', 'YS-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72546, 'pick up spots', 'MB-048');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (21885, 'home delivery', 'MS-001');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80709, 'pick up from store', 'CMI-075');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82628, 'pick up spots', 'FM-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48764, 'pick up spots', 'PT-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (43363, 'pick up from store', 'ML-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (84586, 'home delivery', 'MT-009');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48692, 'home delivery', 'ME-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (26706, 'pick up spots', 'FD-001');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99776, 'pick up spots', 'CS-099');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (58116, 'home delivery', 'CS-051');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (69640, 'pick up spots', 'YS-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (19116, 'pick up spots', 'CP-030');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89602, 'home delivery', 'IBB-109');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80255, 'home delivery', 'YS-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (38510, 'pick up spots', 'CMA-130');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (52932, 'pick up from store', 'MT-016');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (28316, 'home delivery', 'MB-058');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89705, 'pick up from store', 'MB-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (46144, 'pick up from store', 'CMA-071');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (13222, 'pick up spots', 'ME-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80092, 'pick up from store', 'CS-005');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (61221, 'pick up spots', 'YS-015');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (52636, 'pick up from store', 'KB-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (18370, 'home delivery', 'ABB-100');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (47350, 'pick up from store', 'ABB-082');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33042, 'pick up spots', 'CMI-110');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (15928, 'home delivery', 'ABB-109');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (61236, 'pick up spots', 'YS-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (18955, 'pick up spots', 'CS-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89648, 'pick up from store', 'SK-002');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (93859, 'pick up spots', 'SK-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (32616, 'home delivery', 'UP-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90374, 'home delivery', 'CMI-118');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89662, 'pick up from store', 'RD-029');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (71260, 'pick up from store', 'NC-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (46306, 'pick up from store', 'CMA-128');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (19863, 'home delivery', 'CP-043');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (34720, 'pick up from store', 'RD-015');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90601, 'pick up spots', 'CS-014');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (24854, 'pick up spots', 'MB-063');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (31485, 'pick up spots', 'MT-014');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33184, 'pick up spots', 'RD-023');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (98230, 'pick up from store', 'CS-066');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (85127, 'pick up from store', 'ABB-054');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (62909, 'pick up spots', 'MB-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (24038, 'home delivery', 'ABB-072');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90056, 'pick up from store', 'VC-016');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (61011, 'home delivery', 'RD-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (19210, 'home delivery', 'UP-017');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (47206, 'home delivery', 'CMI-104');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (29946, 'pick up from store', 'CP-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48163, 'pick up spots', 'CMI-118');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (59083, 'pick up from store', 'NC-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (91238, 'home delivery', 'CS-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (61568, 'pick up from store', 'ME-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (60575, 'pick up spots', 'CMA-132');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95050, 'home delivery', 'CS-025');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (74499, 'home delivery', 'CP-038');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (57852, 'pick up from store', 'CS-099');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (67821, 'pick up spots', 'ABB-074');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (24815, 'pick up spots', 'RD-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (64231, 'home delivery', 'CMA-070');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (64158, 'home delivery', 'CMI-084');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (59746, 'pick up spots', 'ABB-082');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (79853, 'pick up from store', 'FM-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (70524, 'pick up from store', 'MB-042');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (66073, 'home delivery', 'HD-044');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (41750, 'home delivery', 'IBB-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (83788, 'pick up from store', 'CS-046');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (38656, 'pick up from store', 'YS-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (17769, 'home delivery', 'IBB-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95456, 'pick up from store', 'MB-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (20230, 'pick up spots', 'CMA-107');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (54635, 'pick up spots', 'RD-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (29459, 'pick up spots', 'KB-003');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (55193, 'pick up from store', 'CS-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (92048, 'home delivery', 'CMA-104');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63381, 'pick up spots', 'HD-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (52936, 'home delivery', 'CS-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (26135, 'pick up spots', 'VC-034');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (66142, 'home delivery', 'CMA-150');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (96349, 'pick up from store', 'ABB-114');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (38234, 'pick up spots', 'CP-049');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33450, 'pick up spots', 'ME-014');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (98999, 'home delivery', 'CMA-070', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (68992, 'pick up spots', 'IBB-114', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (19233, 'home delivery', 'CP-029', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82081, 'pick up from store', 'CMA-116', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (93085, 'pick up from store', 'MB-062', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90560, 'pick up spots', 'YS-022', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (84615, 'home delivery', 'SK-017', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (20985, 'home delivery', 'RD-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (74716, 'pick up spots', 'VC-035', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (40064, 'pick up spots', 'IBB-044', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (52694, 'pick up spots', 'SK-013', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (51465, 'pick up spots', 'UP-004', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (70761, 'home delivery', 'ABB-010', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48289, 'home delivery', 'CMA-116', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95682, 'home delivery', 'YS-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72546, 'pick up spots', 'MB-048', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (21885, 'home delivery', 'MS-001', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80709, 'pick up from store', 'CMI-075', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82628, 'pick up spots', 'FM-006', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48764, 'pick up spots', 'PT-004', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (43363, 'pick up from store', 'ML-011', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (84586, 'home delivery', 'MT-009', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48692, 'home delivery', 'ME-021', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (26706, 'pick up spots', 'FD-001', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99776, 'pick up spots', 'CS-099', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (58116, 'home delivery', 'CS-051', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (69640, 'pick up spots', 'YS-006', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (19116, 'pick up spots', 'CP-030', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89602, 'home delivery', 'IBB-109', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80255, 'home delivery', 'YS-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (38510, 'pick up spots', 'CMA-130', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (52932, 'pick up from store', 'MT-016', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (28316, 'home delivery', 'MB-058', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89705, 'pick up from store', 'MB-011', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (46144, 'pick up from store', 'CMA-071', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (13222, 'pick up spots', 'ME-019', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80092, 'pick up from store', 'CS-005', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (61221, 'pick up spots', 'YS-015', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (52636, 'pick up from store', 'KB-006', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (18370, 'home delivery', 'ABB-100', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (47350, 'pick up from store', 'ABB-082', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33042, 'pick up spots', 'CMI-110', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (15928, 'home delivery', 'ABB-109', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (61236, 'pick up spots', 'YS-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (18955, 'pick up spots', 'CS-031', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89648, 'pick up from store', 'SK-002', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (93859, 'pick up spots', 'SK-012', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (32616, 'home delivery', 'UP-011', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90374, 'home delivery', 'CMI-118', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89662, 'pick up from store', 'RD-029', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (71260, 'pick up from store', 'NC-004', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (46306, 'pick up from store', 'CMA-128', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (19863, 'home delivery', 'CP-043', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (34720, 'pick up from store', 'RD-015', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90601, 'pick up spots', 'CS-014', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (24854, 'pick up spots', 'MB-063', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (31485, 'pick up spots', 'MT-014', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33184, 'pick up spots', 'RD-023', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (98230, 'pick up from store', 'CS-066', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (85127, 'pick up from store', 'ABB-054', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (62909, 'pick up spots', 'MB-012', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (24038, 'home delivery', 'ABB-072', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90056, 'pick up from store', 'VC-016', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (61011, 'home delivery', 'RD-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (19210, 'home delivery', 'UP-017', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (47206, 'home delivery', 'CMI-104', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (29946, 'pick up from store', 'CP-004', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48163, 'pick up spots', 'CMI-118', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (59083, 'pick up from store', 'NC-011', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (91238, 'home delivery', 'CS-019', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (61568, 'pick up from store', 'ME-013', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (60575, 'pick up spots', 'CMA-132', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95050, 'home delivery', 'CS-025', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (74499, 'home delivery', 'CP-038', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (57852, 'pick up from store', 'CS-099', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (67821, 'pick up spots', 'ABB-074', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (24815, 'pick up spots', 'RD-011', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (64231, 'home delivery', 'CMA-070', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (64158, 'home delivery', 'CMI-084', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (59746, 'pick up spots', 'ABB-082', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (79853, 'pick up from store', 'FM-008', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (70524, 'pick up from store', 'MB-042', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (66073, 'home delivery', 'HD-044', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (41750, 'home delivery', 'IBB-010', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (83788, 'pick up from store', 'CS-046', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (38656, 'pick up from store', 'YS-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (17769, 'home delivery', 'IBB-006', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95456, 'pick up from store', 'MB-026', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (20230, 'pick up spots', 'CMA-107', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (54635, 'pick up spots', 'RD-031', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (29459, 'pick up spots', 'KB-003', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (55193, 'pick up from store', 'CS-008', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (92048, 'home delivery', 'CMA-104', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63381, 'pick up spots', 'HD-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (52936, 'home delivery', 'CS-004', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (26135, 'pick up spots', 'VC-034', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (66142, 'home delivery', 'CMA-150', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (96349, 'pick up from store', 'ABB-114', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (38234, 'pick up spots', 'CP-049', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33450, 'pick up spots', 'ME-014', 'pending');
 commit;
 prompt 100 records committed...
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (21793, 'pick up spots', 'MB-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48913, 'pick up spots', 'CMA-157');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (65841, 'pick up from store', 'CS-099');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (50204, 'pick up from store', 'MB-062');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35660, 'pick up spots', 'CS-034');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (37453, 'home delivery', 'ABB-108');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (34123, 'home delivery', 'NC-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (58801, 'pick up from store', 'CP-041');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (21714, 'pick up from store', 'CMI-099');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (91749, 'pick up from store', 'PT-099');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (15844, 'pick up spots', 'CMI-120');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95236, 'home delivery', 'sy-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (24402, 'home delivery', 'CMI-098');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (25504, 'pick up spots', 'SK-002');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (93321, 'pick up from store', 'NC-005');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (58535, 'home delivery', 'ABB-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (26277, 'pick up spots', 'HD-007');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (51403, 'home delivery', 'ABB-101');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (44824, 'pick up from store', 'SK-002');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (16225, 'pick up from store', 'ABB-108');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (32865, 'home delivery', 'UP-017');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35359, 'pick up spots', 'CP-045');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (76799, 'pick up spots', 'CP-032');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (28135, 'pick up from store', 'ME-022');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (26312, 'home delivery', 'VC-015');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (37709, 'pick up from store', 'ME-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (53869, 'pick up from store', 'CS-050');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99606, 'pick up spots', 'ML-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (51975, 'home delivery', 'UP-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89027, 'pick up from store', 'CMI-100');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80471, 'pick up from store', 'HD-003');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (88310, 'home delivery', 'MB-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (61016, 'pick up from store', 'CS-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (15073, 'pick up spots', 'ABB-095');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (57575, 'pick up from store', 'CMI-122');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63534, 'pick up spots', 'CMA-149');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (92343, 'pick up from store', 'CMA-155');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (81302, 'pick up spots', 'RD-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (49816, 'home delivery', 'SW-002');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (87761, 'pick up from store', 'ML-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (88457, 'pick up spots', 'CMI-117');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63737, 'pick up from store', 'CMA-071');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89624, 'home delivery', 'ML-036');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (29060, 'home delivery', 'KB-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (55070, 'home delivery', 'IBB-038');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (32645, 'pick up from store', 'RD-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (12465, 'home delivery', 'MB-057');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (79688, 'pick up spots', 'ML-017');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72084, 'pick up spots', 'CMA-156');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (66111, 'pick up from store', 'ABB-104');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (17847, 'pick up spots', 'MB-042');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (73096, 'home delivery', 'NC-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (44341, 'home delivery', 'CMA-144');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (31770, 'home delivery', 'CS-058');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (18452, 'home delivery', 'RD-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89119, 'pick up spots', 'ABB-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35763, 'pick up spots', 'ABB-106');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (45969, 'pick up from store', 'RD-027');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (92740, 'pick up from store', 'CP-038');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35098, 'pick up from store', 'IBB-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (88491, 'home delivery', 'CMA-151');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (96856, 'pick up spots', 'VC-048');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (54785, 'pick up spots', 'CMA-152');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63733, 'home delivery', 'CMA-144');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (68135, 'home delivery', 'IBB-041');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72406, 'pick up from store', 'MB-041');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (65079, 'pick up from store', 'HD-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35494, 'pick up from store', 'ABB-082');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99524, 'pick up from store', 'HD-035');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (86362, 'home delivery', 'CS-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (25208, 'pick up from store', 'CS-088');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (65313, 'home delivery', 'SW-007');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (96404, 'pick up spots', 'CP-052');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (28254, 'pick up spots', 'CMI-113');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (13213, 'pick up spots', 'MB-042');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (58690, 'pick up spots', 'CS-020');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (88610, 'home delivery', 'ML-040');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80252, 'home delivery', 'CMA-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (88895, 'pick up from store', 'ML-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (91096, 'pick up from store', 'MB-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (66502, 'pick up from store', 'CMI-067');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (43515, 'pick up from store', 'ME-016');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (59762, 'pick up spots', 'ABB-103');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33675, 'home delivery', 'ABB-107');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (15916, 'pick up from store', 'YS-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (68531, 'home delivery', 'KB-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63130, 'home delivery', 'CMI-100');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (58533, 'pick up spots', 'CMA-072');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (91102, 'home delivery', 'ABB-060');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95988, 'pick up spots', 'ABB-069');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (57351, 'pick up spots', 'CMA-114');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (71414, 'pick up from store', 'NC-016');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80659, 'pick up from store', 'ME-023');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63138, 'pick up from store', 'ABB-100');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (70059, 'pick up spots', 'NC-025');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48180, 'home delivery', 'VC-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (91292, 'home delivery', 'KB-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (42265, 'pick up from store', 'ME-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (73861, 'pick up from store', 'SC-003');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (31112, 'home delivery', 'MS-001');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (21793, 'pick up spots', 'MB-012', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (65841, 'pick up from store', 'CS-099', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (50204, 'pick up from store', 'MB-062', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35660, 'pick up spots', 'CS-034', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (34123, 'home delivery', 'NC-013', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (58801, 'pick up from store', 'CP-041', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (91749, 'pick up from store', 'PT-099', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (15844, 'pick up spots', 'CMI-120', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95236, 'home delivery', 'sy-006', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (24402, 'home delivery', 'CMI-098', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (93321, 'pick up from store', 'NC-005', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (58535, 'home delivery', 'ABB-012', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (51403, 'home delivery', 'ABB-101', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (44824, 'pick up from store', 'SK-002', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (16225, 'pick up from store', 'ABB-108', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35359, 'pick up spots', 'CP-045', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (76799, 'pick up spots', 'CP-032', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (26312, 'home delivery', 'VC-015', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (37709, 'pick up from store', 'ME-010', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (53869, 'pick up from store', 'CS-050', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (51975, 'home delivery', 'UP-011', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89027, 'pick up from store', 'CMI-100', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80471, 'pick up from store', 'HD-003', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (61016, 'pick up from store', 'CS-031', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (15073, 'pick up spots', 'ABB-095', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63534, 'pick up spots', 'CMA-149', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (92343, 'pick up from store', 'CMA-155', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (81302, 'pick up spots', 'RD-031', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (87761, 'pick up from store', 'ML-010', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (88457, 'pick up spots', 'CMI-117', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63737, 'pick up from store', 'CMA-071', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (29060, 'home delivery', 'KB-013', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (55070, 'home delivery', 'IBB-038', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (12465, 'home delivery', 'MB-057', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (79688, 'pick up spots', 'ML-017', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72084, 'pick up spots', 'CMA-156', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (66111, 'pick up from store', 'ABB-104', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (73096, 'home delivery', 'NC-010', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (44341, 'home delivery', 'CMA-144', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (18452, 'home delivery', 'RD-011', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89119, 'pick up spots', 'ABB-012', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35763, 'pick up spots', 'ABB-106', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (92740, 'pick up from store', 'CP-038', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35098, 'pick up from store', 'IBB-019', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (88491, 'home delivery', 'CMA-151', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (54785, 'pick up spots', 'CMA-152', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63733, 'home delivery', 'CMA-144', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72406, 'pick up from store', 'MB-041', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (65079, 'pick up from store', 'HD-012', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35494, 'pick up from store', 'ABB-082', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (86362, 'home delivery', 'CS-019', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (25208, 'pick up from store', 'CS-088', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (65313, 'home delivery', 'SW-007', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (28254, 'pick up spots', 'CMI-113', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (13213, 'pick up spots', 'MB-042', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (88610, 'home delivery', 'ML-040', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80252, 'home delivery', 'CMA-021', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (88895, 'pick up from store', 'ML-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (66502, 'pick up from store', 'CMI-067', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (43515, 'pick up from store', 'ME-016', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (59762, 'pick up spots', 'ABB-103', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (15916, 'pick up from store', 'YS-024', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (68531, 'home delivery', 'KB-006', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63130, 'home delivery', 'CMI-100', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (91102, 'home delivery', 'ABB-060', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95988, 'pick up spots', 'ABB-069', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (71414, 'pick up from store', 'NC-016', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80659, 'pick up from store', 'ME-023', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63138, 'pick up from store', 'ABB-100', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48180, 'home delivery', 'VC-019', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (91292, 'home delivery', 'KB-008', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (73861, 'pick up from store', 'SC-003', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (31112, 'home delivery', 'MS-001', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (38332, 'home delivery', 'IBB-034', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82109, 'pick up from store', 'MT-018', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (67942, 'home delivery', 'IBB-114', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (44484, 'home delivery', 'RD-035', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (32402, 'pick up from store', 'MB-021', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80258, 'pick up from store', 'CMI-100', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (46891, 'home delivery', 'HD-012', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (46773, 'pick up spots', 'CS-092', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (52842, 'home delivery', 'MB-052', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (47139, 'pick up spots', 'CMI-120', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (14409, 'pick up from store', 'NC-025', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (84914, 'pick up from store', 'PT-004', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95317, 'pick up spots', 'ABB-057', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (25149, 'pick up spots', 'MB-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95813, 'pick up spots', 'CMA-059', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (74820, 'pick up from store', 'ML-029', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (86757, 'pick up spots', 'CMA-099', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (37740, 'pick up from store', 'CS-005', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (55663, 'home delivery', 'CS-031', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (55893, 'pick up from store', 'CMA-154', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (94519, 'pick up from store', 'MB-028', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (44630, 'home delivery', 'CMI-084', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (97162, 'home delivery', 'VC-041', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (54267, 'pick up spots', 'SC-010', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (40534, 'pick up spots', 'IBB-013', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (83507, 'pick up spots', 'CMI-113', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (86548, 'pick up from store', 'ABB-114', 'shipped');
 commit;
 prompt 200 records committed...
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (38332, 'home delivery', 'IBB-034');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82109, 'pick up from store', 'MT-018');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (77774, 'pick up spots', 'ABB-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (67942, 'home delivery', 'IBB-114');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (44484, 'home delivery', 'RD-035');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33027, 'pick up from store', 'YS-027');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (32402, 'pick up from store', 'MB-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80258, 'pick up from store', 'CMI-100');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (46891, 'home delivery', 'HD-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (59849, 'pick up spots', 'NC-027');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (46773, 'pick up spots', 'CS-092');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (52842, 'home delivery', 'MB-052');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (47139, 'pick up spots', 'CMI-120');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (64498, 'pick up from store', 'ME-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (14409, 'pick up from store', 'NC-025');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (84914, 'pick up from store', 'PT-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95317, 'pick up spots', 'ABB-057');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (91337, 'home delivery', 'VC-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (25149, 'pick up spots', 'MB-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95813, 'pick up spots', 'CMA-059');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (74820, 'pick up from store', 'ML-029');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (86757, 'pick up spots', 'CMA-099');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (37740, 'pick up from store', 'CS-005');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (55663, 'home delivery', 'CS-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (55893, 'pick up from store', 'CMA-154');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (94519, 'pick up from store', 'MB-028');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (44630, 'home delivery', 'CMI-084');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (97162, 'home delivery', 'VC-041');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (54267, 'pick up spots', 'SC-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (40534, 'pick up spots', 'IBB-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (83507, 'pick up spots', 'CMI-113');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (86548, 'pick up from store', 'ABB-114');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (45259, 'pick up from store', 'CMA-141');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (95807, 'home delivery', 'CMA-156');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (21797, 'pick up from store', 'CMA-138');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (30109, 'home delivery', 'RD-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (85661, 'pick up spots', 'ML-015');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82123, 'pick up spots', 'VC-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63620, 'pick up spots', 'CP-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (15530, 'pick up from store', 'CS-009');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (44750, 'pick up spots', 'CMI-051');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (22714, 'home delivery', 'IBB-033');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (69126, 'home delivery', 'CMI-076');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (25552, 'pick up spots', 'VC-030');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99452, 'home delivery', 'VC-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (65916, 'home delivery', 'CP-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (68973, 'home delivery', 'ABB-108');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (93943, 'pick up spots', 'CMI-078');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (98846, 'pick up from store', 'KB-005');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63405, 'home delivery', 'PT-003');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82910, 'pick up from store', 'IBB-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (71428, 'pick up spots', 'IBB-038');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90269, 'pick up from store', 'ABB-072');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99789, 'home delivery', 'ME-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (59967, 'pick up from store', 'MS-001');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (40058, 'pick up spots', 'YS-004');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (93917, 'home delivery', 'ABB-061');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (97823, 'home delivery', 'CP-020');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (59623, 'home delivery', 'RD-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90411, 'pick up from store', 'FM-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (14075, 'pick up from store', 'CS-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (91848, 'pick up from store', 'ME-014');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (84563, 'pick up from store', 'ABB-001');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (13783, 'pick up from store', 'CMI-107');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (76509, 'home delivery', 'MB-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (79070, 'home delivery', 'IBB-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (69083, 'pick up spots', 'ML-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (21920, 'home delivery', 'CMI-079');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72115, 'pick up from store', 'MT-005');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (19215, 'pick up from store', 'IBB-005');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (93378, 'home delivery', 'ABB-053');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (45156, 'home delivery', 'CS-051');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (11510, 'home delivery', 'ABB-087');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (86161, 'pick up spots', 'CMA-116');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89934, 'pick up spots', 'IBB-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (30702, 'pick up from store', 'VC-041');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48016, 'pick up spots', 'SY-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (94821, 'pick up from store', 'IBB-110');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (77123, 'home delivery', 'CS-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (60282, 'home delivery', 'CS-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (84792, 'home delivery', 'IBB-113');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35470, 'home delivery', 'CS-025');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (52177, 'home delivery', 'ABB-001');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (37421, 'pick up from store', 'IBB-038');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (32041, 'home delivery', 'RD-038');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (49885, 'home delivery', 'CMI-092');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (32823, 'pick up spots', 'ME-016');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (15938, 'pick up from store', 'IBB-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (83902, 'pick up spots', 'CMI-101');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (15633, 'home delivery', 'CMA-159');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (98726, 'home delivery', 'RD-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (86055, 'pick up from store', 'CMA-149');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (26227, 'home delivery', 'ML-102');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (19822, 'pick up spots', 'ME-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (68656, 'pick up from store', 'VC-016');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (52254, 'pick up from store', 'TB-009');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (98032, 'home delivery', 'ABB-077');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (55927, 'pick up from store', 'MS-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (13897, 'pick up from store', 'CS-025');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (80629, 'home delivery', 'ME-026');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (45259, 'pick up from store', 'CMA-141', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (95807, 'home delivery', 'CMA-156', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (21797, 'pick up from store', 'CMA-138', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (30109, 'home delivery', 'RD-008', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (85661, 'pick up spots', 'ML-015', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82123, 'pick up spots', 'VC-031', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63620, 'pick up spots', 'CP-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (15530, 'pick up from store', 'CS-009', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (44750, 'pick up spots', 'CMI-051', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (22714, 'home delivery', 'IBB-033', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (69126, 'home delivery', 'CMI-076', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (25552, 'pick up spots', 'VC-030', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99452, 'home delivery', 'VC-013', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (65916, 'home delivery', 'CP-008', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (68973, 'home delivery', 'ABB-108', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (93943, 'pick up spots', 'CMI-078', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (98846, 'pick up from store', 'KB-005', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63405, 'home delivery', 'PT-003', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82910, 'pick up from store', 'IBB-019', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (71428, 'pick up spots', 'IBB-038', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90269, 'pick up from store', 'ABB-072', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99789, 'home delivery', 'ME-026', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (59967, 'pick up from store', 'MS-001', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (40058, 'pick up spots', 'YS-004', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (93917, 'home delivery', 'ABB-061', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (97823, 'home delivery', 'CP-020', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (59623, 'home delivery', 'RD-008', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90411, 'pick up from store', 'FM-006', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (14075, 'pick up from store', 'CS-021', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (91848, 'pick up from store', 'ME-014', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (84563, 'pick up from store', 'ABB-001', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (13783, 'pick up from store', 'CMI-107', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (76509, 'home delivery', 'MB-010', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (79070, 'home delivery', 'IBB-021', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (69083, 'pick up spots', 'ML-011', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (21920, 'home delivery', 'CMI-079', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72115, 'pick up from store', 'MT-005', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (19215, 'pick up from store', 'IBB-005', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (93378, 'home delivery', 'ABB-053', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (45156, 'home delivery', 'CS-051', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (11510, 'home delivery', 'ABB-087', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (86161, 'pick up spots', 'CMA-116', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89934, 'pick up spots', 'IBB-006', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (30702, 'pick up from store', 'VC-041', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48016, 'pick up spots', 'SY-008', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (94821, 'pick up from store', 'IBB-110', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (77123, 'home delivery', 'CS-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (60282, 'home delivery', 'CS-021', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (84792, 'home delivery', 'IBB-113', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35470, 'home delivery', 'CS-025', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (52177, 'home delivery', 'ABB-001', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (37421, 'pick up from store', 'IBB-038', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (32041, 'home delivery', 'RD-038', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (49885, 'home delivery', 'CMI-092', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (32823, 'pick up spots', 'ME-016', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (15938, 'pick up from store', 'IBB-026', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (83902, 'pick up spots', 'CMI-101', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (15633, 'home delivery', 'CMA-159', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (98726, 'home delivery', 'RD-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (86055, 'pick up from store', 'CMA-149', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (26227, 'home delivery', 'ML-102', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (19822, 'pick up spots', 'ME-019', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (68656, 'pick up from store', 'VC-016', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (52254, 'pick up from store', 'TB-009', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (98032, 'home delivery', 'ABB-077', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (55927, 'pick up from store', 'MS-011', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (13897, 'pick up from store', 'CS-025', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (80629, 'home delivery', 'ME-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (71947, 'home delivery', 'YS-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (98658, 'pick up spots', 'CS-050', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82777, 'home delivery', 'KB-008', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (42735, 'pick up spots', 'ABB-098', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99538, 'home delivery', 'CS-077', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (81917, 'pick up from store', 'CMA-111', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82075, 'pick up from store', 'ABB-072', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (10420, 'home delivery', 'ABB-103', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (12407, 'home delivery', 'MB-001', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (92030, 'pick up spots', 'PT-012', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (81310, 'pick up from store', 'CMA-117', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (92106, 'home delivery', 'CMI-097', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72238, 'pick up from store', 'SW-011', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (73409, 'home delivery', 'CMI-120', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (78409, 'pick up from store', 'ME-023', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (57847, 'home delivery', 'CS-050', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (49577, 'pick up spots', 'CS-020', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72987, 'pick up from store', 'MB-023', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (45503, 'home delivery', 'CS-077', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (40095, 'pick up from store', 'HD-015', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (65915, 'home delivery', 'KB-008', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (55042, 'home delivery', 'NC-011', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (10154, 'pick up from store', 'CMA-130', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (11137, 'pick up spots', 'NC-020', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (29300, 'home delivery', 'CP-029', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89573, 'pick up from store', 'YS-010', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (21754, 'pick up from store', 'CS-021', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (22426, 'home delivery', 'RD-035', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48824, 'home delivery', 'SC-009', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (27213, 'home delivery', 'ML-034', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (31934, 'pick up spots', 'KB-006', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (13293, 'pick up spots', 'CP-040', 'shipped');
 commit;
 prompt 300 records committed...
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (71947, 'home delivery', 'YS-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (98658, 'pick up spots', 'CS-050');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82777, 'home delivery', 'KB-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (42735, 'pick up spots', 'ABB-098');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99538, 'home delivery', 'CS-077');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (81917, 'pick up from store', 'CMA-111');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82075, 'pick up from store', 'ABB-072');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (10420, 'home delivery', 'ABB-103');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (12407, 'home delivery', 'MB-001');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (92030, 'pick up spots', 'PT-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (81310, 'pick up from store', 'CMA-117');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (92106, 'home delivery', 'CMI-097');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72238, 'pick up from store', 'SW-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (73409, 'home delivery', 'CMI-120');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (78409, 'pick up from store', 'ME-023');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (57847, 'home delivery', 'CS-050');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (49577, 'pick up spots', 'CS-020');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72987, 'pick up from store', 'MB-023');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (45503, 'home delivery', 'CS-077');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (40095, 'pick up from store', 'HD-015');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (65915, 'home delivery', 'KB-008');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (55042, 'home delivery', 'NC-011');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (10154, 'pick up from store', 'CMA-130');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (11137, 'pick up spots', 'NC-020');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (29300, 'home delivery', 'CP-029');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (89573, 'pick up from store', 'YS-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (41007, 'pick up spots', 'MB-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (21754, 'pick up from store', 'CS-021');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (22426, 'home delivery', 'RD-035');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (61009, 'home delivery', 'CMI-093');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (48824, 'home delivery', 'SC-009');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (27213, 'home delivery', 'ML-034');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (31934, 'pick up spots', 'KB-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (73791, 'pick up spots', 'ABB-069');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (13293, 'pick up spots', 'CP-040');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (63041, 'pick up from store', 'ME-009');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (18868, 'pick up spots', 'HD-003');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (41740, 'pick up from store', 'ML-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (67677, 'pick up spots', 'IBB-034');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99376, 'home delivery', 'CP-007');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35559, 'home delivery', 'CP-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (71316, 'pick up from store', 'CS-015');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (31799, 'pick up from store', 'HD-036');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (87648, 'pick up spots', 'MB-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (43394, 'pick up from store', 'CMI-119');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (38419, 'home delivery', 'SK-013');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (20842, 'pick up spots', 'ABB-062');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33453, 'pick up spots', 'CMI-099');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (96466, 'home delivery', 'ME-019');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33012, 'home delivery', 'ME-014');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (59457, 'pick up spots', 'RD-029');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (79956, 'home delivery', 'CMA-160');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (40685, 'home delivery', 'KB-006');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90620, 'pick up spots', 'CS-072');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (56593, 'home delivery', 'CMA-114');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (50150, 'home delivery', 'ML-102');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (88929, 'pick up from store', 'NC-012');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90093, 'pick up spots', 'CMA-039');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72881, 'pick up from store', 'SK-014');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (35757, 'pick up spots', 'RD-014');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (18611, 'pick up spots', 'CMA-142');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (83238, 'home delivery', 'ME-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (81849, 'pick up from store', 'NC-005');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (54473, 'home delivery', 'ABB-001');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (56177, 'pick up from store', 'YS-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (11789, 'pick up spots', 'YS-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (51579, 'home delivery', 'ABB-077');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (61982, 'pick up from store', 'TB-009');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (92638, 'pick up spots', 'CMI-105');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (65358, 'pick up spots', 'MB-033');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (23998, 'pick up from store', 'ABB-110');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (23934, 'pick up from store', 'ABB-089');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (49848, 'pick up from store', 'ME-034');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (57379, 'pick up spots', 'KB-018');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99728, 'pick up spots', 'CS-077');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (64100, 'pick up from store', 'CMI-115');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (17369, 'pick up spots', 'RD-028');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (33333, 'home delivery', 'ML-026');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (30260, 'pick up spots', 'MB-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (66464, 'pick up from store', 'IBB-110');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (39457, 'pick up from store', 'CP-024');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (88288, 'pick up spots', 'RD-034');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (71618, 'pick up from store', 'CS-072');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (31743, 'pick up from store', 'IBB-109');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (93937, 'pick up spots', 'CS-031');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (84762, 'pick up spots', 'IBB-015');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (50609, 'pick up spots', 'RD-018');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (42380, 'pick up from store', 'KB-002');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (23825, 'home delivery', 'MB-002');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (72042, 'pick up spots', 'ABB-100');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (68055, 'home delivery', 'IBB-044');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (98067, 'pick up spots', 'IBB-033');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (82463, 'pick up spots', 'IBB-010');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (78140, 'pick up from store', 'CS-018');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (78989, 'home delivery', 'ABB-114');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (38154, 'pick up spots', 'ML-039');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (75064, 'pick up spots', 'CS-025');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (90878, 'pick up from store', 'CS-020');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (27033, 'pick up from store', 'ME-016');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (25176, 'home delivery', 'MB-011');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (63041, 'pick up from store', 'ME-009', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (41740, 'pick up from store', 'ML-031', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (67677, 'pick up spots', 'IBB-034', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99376, 'home delivery', 'CP-007', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (71316, 'pick up from store', 'CS-015', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (31799, 'pick up from store', 'HD-036', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (43394, 'pick up from store', 'CMI-119', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (38419, 'home delivery', 'SK-013', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (20842, 'pick up spots', 'ABB-062', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (96466, 'home delivery', 'ME-019', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33012, 'home delivery', 'ME-014', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (59457, 'pick up spots', 'RD-029', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (40685, 'home delivery', 'KB-006', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90620, 'pick up spots', 'CS-072', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (50150, 'home delivery', 'ML-102', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (88929, 'pick up from store', 'NC-012', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90093, 'pick up spots', 'CMA-039', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35757, 'pick up spots', 'RD-014', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (18611, 'pick up spots', 'CMA-142', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (83238, 'home delivery', 'ME-031', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (54473, 'home delivery', 'ABB-001', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (56177, 'pick up from store', 'YS-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (11789, 'pick up spots', 'YS-024', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (61982, 'pick up from store', 'TB-009', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (92638, 'pick up spots', 'CMI-105', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (65358, 'pick up spots', 'MB-033', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (23934, 'pick up from store', 'ABB-089', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (49848, 'pick up from store', 'ME-034', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (57379, 'pick up spots', 'KB-018', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (64100, 'pick up from store', 'CMI-115', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (17369, 'pick up spots', 'RD-028', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (30260, 'pick up spots', 'MB-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (66464, 'pick up from store', 'IBB-110', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (39457, 'pick up from store', 'CP-024', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (71618, 'pick up from store', 'CS-072', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (31743, 'pick up from store', 'IBB-109', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (84762, 'pick up spots', 'IBB-015', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (50609, 'pick up spots', 'RD-018', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (42380, 'pick up from store', 'KB-002', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72042, 'pick up spots', 'ABB-100', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (68055, 'home delivery', 'IBB-044', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (82463, 'pick up spots', 'IBB-010', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (78140, 'pick up from store', 'CS-018', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (78989, 'home delivery', 'ABB-114', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (75064, 'pick up spots', 'CS-025', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (90878, 'pick up from store', 'CS-020', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (27033, 'pick up from store', 'ME-016', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (43355, 'home delivery', 'CP-042', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (10000000000, 'home delivery', 'TRACK12345', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99999999999, 'home delivery', 'TRACK12345', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (2415235325, 'home delivery', 'TRACK12345', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (24152353253, 'home delivery', 'TRACK12345', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (2415235324423324, 'home delivery', 'TRACK12345', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (48913, 'pick up spots', 'CMA-157', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (37453, 'home delivery', 'ABB-108', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (21714, 'pick up from store', 'CMI-099', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (25504, 'pick up spots', 'SK-002', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (26277, 'pick up spots', 'HD-007', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (32865, 'home delivery', 'UP-017', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (28135, 'pick up from store', 'ME-022', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99606, 'pick up spots', 'ML-031', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (88310, 'home delivery', 'MB-006', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (57575, 'pick up from store', 'CMI-122', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (49816, 'home delivery', 'SW-002', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (89624, 'home delivery', 'ML-036', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (32645, 'pick up from store', 'RD-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (17847, 'pick up spots', 'MB-042', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (31770, 'home delivery', 'CS-058', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (45969, 'pick up from store', 'RD-027', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (96856, 'pick up spots', 'VC-048', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (68135, 'home delivery', 'IBB-041', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99524, 'pick up from store', 'HD-035', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (96404, 'pick up spots', 'CP-052', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (58690, 'pick up spots', 'CS-020', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (91096, 'pick up from store', 'MB-004', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33675, 'home delivery', 'ABB-107', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (58533, 'pick up spots', 'CMA-072', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (57351, 'pick up spots', 'CMA-114', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (70059, 'pick up spots', 'NC-025', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (42265, 'pick up from store', 'ME-021', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (77774, 'pick up spots', 'ABB-026', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33027, 'pick up from store', 'YS-027', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (59849, 'pick up spots', 'NC-027', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (64498, 'pick up from store', 'ME-013', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (91337, 'home delivery', 'VC-012', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (41007, 'pick up spots', 'MB-012', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (61009, 'home delivery', 'CMI-093', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (73791, 'pick up spots', 'ABB-069', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (18868, 'pick up spots', 'HD-003', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (35559, 'home delivery', 'CP-024', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (87648, 'pick up spots', 'MB-024', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33453, 'pick up spots', 'CMI-099', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (79956, 'home delivery', 'CMA-160', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (56593, 'home delivery', 'CMA-114', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (72881, 'pick up from store', 'SK-014', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (81849, 'pick up from store', 'NC-005', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (51579, 'home delivery', 'ABB-077', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (23998, 'pick up from store', 'ABB-110', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (99728, 'pick up spots', 'CS-077', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (33333, 'home delivery', 'ML-026', 'pending');
 commit;
 prompt 400 records committed...
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (43355, 'home delivery', 'CP-042');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (10000000000, 'home delivery', 'TRACK12345');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (6667777, 'home delivery', 'TRACK12345');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (99999999999, 'home delivery', 'TRACK12345');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (2415235325, 'home delivery', 'TRACK12345');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (24152353253, 'home delivery', 'TRACK12345');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (2415235322223, 'home delivery', 'TRACK12345');
-insert into ORDERDETAILS (order_id, delivery_method, tracking_number)
-values (2415235324423324, 'home delivery', 'TRACK12345');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (88288, 'pick up spots', 'RD-034', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (93937, 'pick up spots', 'CS-031', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (23825, 'home delivery', 'MB-002', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (98067, 'pick up spots', 'IBB-033', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (38154, 'pick up spots', 'ML-039', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (25176, 'home delivery', 'MB-011', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (6667777, 'home delivery', 'TRACK12345', 'shipped');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (2415235322223, 'home delivery', 'TRACK12345', 'pending');
+insert into ORDERDETAILS (order_id, delivery_method, tracking_number, order_status)
+values (313575, 'home delivery', 'TRACK-66666', 'pending');
 commit;
-prompt 408 records loaded
+prompt 409 records loaded
 prompt Loading PRODUCTS...
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (1, ' Laptop', ' New', 899.99, 1, 1, to_date('26-04-2023', 'dd-mm-yyyy'));
+values (1, ' Laptop', ' New', 989.99, 1, 6, to_date('26-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (2, ' Desktop Computer', ' Refurbished', 699.99, 1, 22, to_date('20-10-2023', 'dd-mm-yyyy'));
+values (2, ' Desktop Computer', ' Refurbished', 769.99, 1, 31, to_date('20-10-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (3, ' Monitor', ' New', 199.99, 1, 0, to_date('03-05-2023', 'dd-mm-yyyy'));
+values (3, ' Monitor', ' New', 219.99, 1, 9, to_date('03-05-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (4, ' Keyboard', ' New', 49.99, 1, 11, to_date('30-06-2023', 'dd-mm-yyyy'));
+values (4, ' Keyboard', ' New', 54.99, 1, 21, to_date('30-06-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (5, ' Mouse', ' New', 19.99, 1, 16, to_date('30-06-2023', 'dd-mm-yyyy'));
+values (5, ' Mouse', ' New', 21.99, 1, 26, to_date('30-06-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (6, ' External Hard Drive', ' Refurbished', 79.99, 11, 18, to_date('23-12-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
@@ -4909,7 +4920,7 @@ values (7, ' USB Flash Drive', ' New', 14.99, 11, 20, to_date('24-10-2023', 'dd-
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (8, ' Printer', ' New', 149.99, 2, 15, to_date('05-06-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (9, ' Wireless Keyboard', ' Refurbished', 29.99, 1, 25, to_date('12-03-2023', 'dd-mm-yyyy'));
+values (9, ' Wireless Keyboard', ' Refurbished', 32.99, 1, 35, to_date('12-03-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (10, ' Bluetooth Speaker', ' New', 79.99, 2, 21, to_date('26-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
@@ -5223,13 +5234,13 @@ values (198, ' 3D Printer', ' Refurbished', 399.99, 21, 12, to_date('29-03-2023'
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (199, ' Electric Scooter', ' New', 299.99, 21, 24, to_date('24-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (200, ' Laptop Cooling Pad', ' Refurbished', 24.99, 1, 11, to_date('20-04-2023', 'dd-mm-yyyy'));
+values (200, ' Laptop Cooling Pad', ' Refurbished', 27.49, 1, 21, to_date('20-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (201, ' External SSD', ' New', 119.99, 11, 11, to_date('18-12-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (202, ' Inkjet Printer', ' Refurbished', 99.99, 2, 9, to_date('02-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (203, ' Ergonomic Mouse', ' New', 29.99, 1, 18, to_date('11-04-2023', 'dd-mm-yyyy'));
+values (203, ' Ergonomic Mouse', ' New', 32.99, 1, 28, to_date('11-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (204, ' Mechanical Gaming Keyboard', ' New', 99.99, 5, 7, to_date('28-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
@@ -5383,7 +5394,7 @@ values (288, ' Portable SSD', ' Refurbished', 99.99, 11, 29, to_date('01-06-2023
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (289, ' Laser Printer', ' New', 149.99, 2, 25, to_date('13-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (290, ' Ergonomic Mouse', ' New', 29.99, 1, 5, to_date('24-05-2023', 'dd-mm-yyyy'));
+values (290, ' Ergonomic Mouse', ' New', 32.99, 1, 15, to_date('24-05-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (291, ' Mechanical Gaming Keyboard', ' Refurbished', 89.99, 5, 13, to_date('27-06-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
@@ -5525,13 +5536,13 @@ values (372, ' 3D Printer Kit', ' New', 299.99, 19, 6, to_date('01-11-2023', 'dd
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (373, ' Electric Scooter', ' Refurbished', 199.99, 19, 22, to_date('07-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (374, ' Laptop Cooling Pad', ' New', 19.99, 1, 9, to_date('17-12-2023', 'dd-mm-yyyy'));
+values (374, ' Laptop Cooling Pad', ' New', 21.99, 1, 19, to_date('17-12-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (375, ' Portable SSD', ' Refurbished', 79.99, 11, 19, to_date('03-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (376, ' Laser Printer', ' New', 199.99, 2, 11, to_date('29-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (377, ' Ergonomic Mouse', ' Refurbished', 14.99, 1, 14, to_date('25-09-2023', 'dd-mm-yyyy'));
+values (377, ' Ergonomic Mouse', ' Refurbished', 16.49, 1, 24, to_date('25-09-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (378, ' Mechanical Gaming Keyboard', ' New', 129.99, 5, 4, to_date('13-09-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
@@ -5701,13 +5712,13 @@ values (460, ' Electric Scooter', ' New', 199.99, 19, 7, to_date('16-05-2023', '
 commit;
 prompt 400 records committed...
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (461, ' Laptop Cooling Pad', ' Refurbished', 14.99, 1, 7, to_date('11-01-2023', 'dd-mm-yyyy'));
+values (461, ' Laptop Cooling Pad', ' Refurbished', 16.49, 1, 17, to_date('11-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (462, ' Portable SSD', ' New', 129.99, 11, 8, to_date('16-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (463, ' Laser Printer', ' Refurbished', 79.99, 2, 13, to_date('11-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (464, ' Ergonomic Mouse', ' Refurbished', 9.99, 1, 21, to_date('21-08-2023', 'dd-mm-yyyy'));
+values (464, ' Ergonomic Mouse', ' Refurbished', 10.99, 1, 31, to_date('21-08-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (465, ' Mechanical Gaming Keyboard', ' New', 79.99, 5, 7, to_date('29-12-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
@@ -5849,7 +5860,7 @@ values (274, ' Business Handbag', ' Refurbished', 24.99, 19, 17, to_date('21-08-
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (280, ' High-Speed Memory Card', ' Refurbished', 9.99, 19, 19, to_date('17-09-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
-values (287, ' Laptop Cooling Pad', ' New', 24.99, 1, 9, to_date('24-04-2023', 'dd-mm-yyyy'));
+values (287, ' Laptop Cooling Pad', ' New', 27.49, 1, 19, to_date('24-04-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
 values (292, ' Gaming Chair', ' New', 199.99, 5, 5, to_date('06-01-2023', 'dd-mm-yyyy'));
 insert into PRODUCTS (product_id, product_name, status, price, category_id, stock, available_date)
@@ -8016,1011 +8027,1011 @@ commit;
 prompt 650 records loaded
 prompt Loading SELL...
 insert into SELL (seller_id, product_id)
-values (11636, 362);
-insert into SELL (seller_id, product_id)
-values (11668, 226);
-insert into SELL (seller_id, product_id)
-values (11239, 109);
-insert into SELL (seller_id, product_id)
-values (11303, 270);
-insert into SELL (seller_id, product_id)
-values (11447, 187);
-insert into SELL (seller_id, product_id)
-values (11496, 77);
-insert into SELL (seller_id, product_id)
-values (11195, 488);
-insert into SELL (seller_id, product_id)
-values (11758, 487);
-insert into SELL (seller_id, product_id)
-values (11500, 467);
-insert into SELL (seller_id, product_id)
-values (11157, 16);
-insert into SELL (seller_id, product_id)
-values (11374, 490);
-insert into SELL (seller_id, product_id)
-values (11124, 287);
-insert into SELL (seller_id, product_id)
-values (11213, 373);
-insert into SELL (seller_id, product_id)
-values (11512, 177);
-insert into SELL (seller_id, product_id)
-values (11420, 29);
-insert into SELL (seller_id, product_id)
-values (11363, 412);
-insert into SELL (seller_id, product_id)
-values (11589, 311);
-insert into SELL (seller_id, product_id)
-values (11680, 9);
-insert into SELL (seller_id, product_id)
-values (11244, 323);
-insert into SELL (seller_id, product_id)
-values (11184, 129);
-insert into SELL (seller_id, product_id)
-values (11279, 425);
-insert into SELL (seller_id, product_id)
-values (11545, 438);
-insert into SELL (seller_id, product_id)
-values (11566, 3);
-insert into SELL (seller_id, product_id)
-values (11661, 331);
-insert into SELL (seller_id, product_id)
-values (11365, 3);
-insert into SELL (seller_id, product_id)
-values (11722, 247);
-insert into SELL (seller_id, product_id)
-values (11562, 28);
-insert into SELL (seller_id, product_id)
-values (11505, 361);
-insert into SELL (seller_id, product_id)
-values (11407, 240);
-insert into SELL (seller_id, product_id)
-values (11603, 23);
-insert into SELL (seller_id, product_id)
-values (11439, 103);
-insert into SELL (seller_id, product_id)
-values (11468, 436);
-insert into SELL (seller_id, product_id)
-values (11710, 488);
-insert into SELL (seller_id, product_id)
-values (11345, 334);
-insert into SELL (seller_id, product_id)
-values (11463, 445);
-insert into SELL (seller_id, product_id)
-values (11641, 267);
-insert into SELL (seller_id, product_id)
-values (11399, 347);
-insert into SELL (seller_id, product_id)
-values (11301, 52);
-insert into SELL (seller_id, product_id)
-values (11362, 489);
-insert into SELL (seller_id, product_id)
-values (11391, 303);
-insert into SELL (seller_id, product_id)
-values (11414, 175);
-insert into SELL (seller_id, product_id)
-values (11492, 272);
-insert into SELL (seller_id, product_id)
-values (11388, 462);
-insert into SELL (seller_id, product_id)
-values (11289, 170);
-insert into SELL (seller_id, product_id)
-values (11374, 24);
-insert into SELL (seller_id, product_id)
-values (11116, 479);
-insert into SELL (seller_id, product_id)
-values (11152, 403);
-insert into SELL (seller_id, product_id)
-values (11182, 222);
-insert into SELL (seller_id, product_id)
-values (11350, 467);
-insert into SELL (seller_id, product_id)
-values (11352, 302);
-insert into SELL (seller_id, product_id)
-values (11416, 68);
-insert into SELL (seller_id, product_id)
-values (11548, 288);
-insert into SELL (seller_id, product_id)
-values (11408, 355);
-insert into SELL (seller_id, product_id)
-values (11700, 436);
-insert into SELL (seller_id, product_id)
-values (11710, 235);
-insert into SELL (seller_id, product_id)
-values (11651, 52);
-insert into SELL (seller_id, product_id)
-values (11515, 421);
-insert into SELL (seller_id, product_id)
-values (11567, 260);
-insert into SELL (seller_id, product_id)
-values (11554, 448);
-insert into SELL (seller_id, product_id)
-values (11628, 83);
-insert into SELL (seller_id, product_id)
-values (11166, 365);
-insert into SELL (seller_id, product_id)
-values (11237, 54);
-insert into SELL (seller_id, product_id)
-values (11404, 135);
-insert into SELL (seller_id, product_id)
-values (11374, 55);
-insert into SELL (seller_id, product_id)
-values (11315, 293);
-insert into SELL (seller_id, product_id)
-values (11589, 409);
-insert into SELL (seller_id, product_id)
-values (11364, 122);
-insert into SELL (seller_id, product_id)
-values (11412, 85);
-insert into SELL (seller_id, product_id)
-values (11487, 85);
-insert into SELL (seller_id, product_id)
-values (11251, 307);
-insert into SELL (seller_id, product_id)
-values (11553, 104);
-insert into SELL (seller_id, product_id)
-values (11204, 250);
-insert into SELL (seller_id, product_id)
-values (11143, 156);
-insert into SELL (seller_id, product_id)
-values (11595, 295);
-insert into SELL (seller_id, product_id)
-values (11554, 471);
-insert into SELL (seller_id, product_id)
-values (11410, 256);
-insert into SELL (seller_id, product_id)
-values (11417, 146);
-insert into SELL (seller_id, product_id)
-values (11371, 387);
-insert into SELL (seller_id, product_id)
-values (11511, 88);
-insert into SELL (seller_id, product_id)
-values (11627, 256);
-insert into SELL (seller_id, product_id)
-values (11369, 482);
-insert into SELL (seller_id, product_id)
-values (11140, 79);
-insert into SELL (seller_id, product_id)
-values (11658, 401);
-insert into SELL (seller_id, product_id)
-values (11426, 329);
-insert into SELL (seller_id, product_id)
-values (11746, 389);
-insert into SELL (seller_id, product_id)
-values (11235, 22);
-insert into SELL (seller_id, product_id)
-values (11551, 70);
-insert into SELL (seller_id, product_id)
-values (11425, 127);
-insert into SELL (seller_id, product_id)
-values (11322, 257);
-insert into SELL (seller_id, product_id)
-values (11722, 376);
-insert into SELL (seller_id, product_id)
-values (11623, 377);
-insert into SELL (seller_id, product_id)
-values (11158, 146);
-insert into SELL (seller_id, product_id)
-values (11389, 452);
-insert into SELL (seller_id, product_id)
-values (11750, 311);
-insert into SELL (seller_id, product_id)
-values (11201, 163);
-insert into SELL (seller_id, product_id)
-values (11531, 197);
-insert into SELL (seller_id, product_id)
-values (11526, 42);
-insert into SELL (seller_id, product_id)
-values (11537, 132);
-insert into SELL (seller_id, product_id)
-values (11442, 59);
-insert into SELL (seller_id, product_id)
-values (11467, 494);
-commit;
-prompt 100 records committed...
-insert into SELL (seller_id, product_id)
-values (11574, 361);
-insert into SELL (seller_id, product_id)
-values (11154, 105);
-insert into SELL (seller_id, product_id)
-values (11479, 208);
-insert into SELL (seller_id, product_id)
-values (11745, 433);
-insert into SELL (seller_id, product_id)
-values (11383, 90);
-insert into SELL (seller_id, product_id)
-values (11292, 417);
-insert into SELL (seller_id, product_id)
-values (11438, 358);
-insert into SELL (seller_id, product_id)
-values (11730, 481);
-insert into SELL (seller_id, product_id)
-values (11572, 122);
-insert into SELL (seller_id, product_id)
-values (11475, 307);
-insert into SELL (seller_id, product_id)
-values (11272, 361);
-insert into SELL (seller_id, product_id)
-values (11338, 278);
-insert into SELL (seller_id, product_id)
-values (11407, 433);
-insert into SELL (seller_id, product_id)
-values (11561, 317);
-insert into SELL (seller_id, product_id)
-values (11251, 80);
-insert into SELL (seller_id, product_id)
-values (11750, 342);
-insert into SELL (seller_id, product_id)
-values (11588, 312);
-insert into SELL (seller_id, product_id)
-values (11336, 251);
-insert into SELL (seller_id, product_id)
-values (11529, 198);
-insert into SELL (seller_id, product_id)
-values (11611, 475);
-insert into SELL (seller_id, product_id)
-values (11560, 485);
-insert into SELL (seller_id, product_id)
-values (11446, 245);
-insert into SELL (seller_id, product_id)
-values (11419, 459);
-insert into SELL (seller_id, product_id)
-values (11719, 300);
-insert into SELL (seller_id, product_id)
-values (11736, 195);
-insert into SELL (seller_id, product_id)
-values (11121, 27);
-insert into SELL (seller_id, product_id)
-values (11637, 289);
-insert into SELL (seller_id, product_id)
-values (11308, 442);
-insert into SELL (seller_id, product_id)
-values (11535, 123);
-insert into SELL (seller_id, product_id)
-values (11138, 297);
-insert into SELL (seller_id, product_id)
-values (11712, 312);
-insert into SELL (seller_id, product_id)
-values (11523, 411);
-insert into SELL (seller_id, product_id)
-values (11684, 281);
-insert into SELL (seller_id, product_id)
-values (11629, 318);
-insert into SELL (seller_id, product_id)
-values (11660, 315);
-insert into SELL (seller_id, product_id)
-values (11125, 93);
-insert into SELL (seller_id, product_id)
-values (11691, 271);
-insert into SELL (seller_id, product_id)
-values (11223, 100);
-insert into SELL (seller_id, product_id)
-values (11423, 84);
-insert into SELL (seller_id, product_id)
-values (11353, 409);
-insert into SELL (seller_id, product_id)
-values (11580, 449);
-insert into SELL (seller_id, product_id)
-values (11436, 275);
-insert into SELL (seller_id, product_id)
-values (11324, 149);
-insert into SELL (seller_id, product_id)
-values (11715, 178);
-insert into SELL (seller_id, product_id)
-values (11388, 29);
-insert into SELL (seller_id, product_id)
-values (11344, 143);
-insert into SELL (seller_id, product_id)
-values (11593, 458);
-insert into SELL (seller_id, product_id)
-values (11668, 46);
-insert into SELL (seller_id, product_id)
-values (11689, 35);
-insert into SELL (seller_id, product_id)
-values (11404, 325);
-insert into SELL (seller_id, product_id)
-values (11598, 442);
-insert into SELL (seller_id, product_id)
-values (11702, 153);
-insert into SELL (seller_id, product_id)
-values (11219, 228);
-insert into SELL (seller_id, product_id)
-values (11460, 135);
-insert into SELL (seller_id, product_id)
-values (11402, 469);
-insert into SELL (seller_id, product_id)
-values (11197, 419);
-insert into SELL (seller_id, product_id)
-values (11379, 395);
-insert into SELL (seller_id, product_id)
-values (11391, 41);
-insert into SELL (seller_id, product_id)
-values (11730, 244);
-insert into SELL (seller_id, product_id)
-values (11538, 494);
-insert into SELL (seller_id, product_id)
-values (11347, 58);
-insert into SELL (seller_id, product_id)
-values (11153, 336);
-insert into SELL (seller_id, product_id)
-values (11702, 72);
-insert into SELL (seller_id, product_id)
-values (11455, 358);
-insert into SELL (seller_id, product_id)
-values (11355, 61);
-insert into SELL (seller_id, product_id)
-values (11507, 455);
-insert into SELL (seller_id, product_id)
-values (11483, 65);
-insert into SELL (seller_id, product_id)
-values (11515, 77);
-insert into SELL (seller_id, product_id)
-values (11138, 128);
-insert into SELL (seller_id, product_id)
-values (11540, 417);
-insert into SELL (seller_id, product_id)
-values (11399, 231);
-insert into SELL (seller_id, product_id)
-values (11499, 224);
-insert into SELL (seller_id, product_id)
-values (11342, 262);
-insert into SELL (seller_id, product_id)
-values (11427, 451);
-insert into SELL (seller_id, product_id)
-values (11417, 481);
-insert into SELL (seller_id, product_id)
-values (11721, 463);
-insert into SELL (seller_id, product_id)
-values (11397, 90);
-insert into SELL (seller_id, product_id)
-values (11333, 286);
-insert into SELL (seller_id, product_id)
-values (11641, 46);
-insert into SELL (seller_id, product_id)
-values (11138, 273);
-insert into SELL (seller_id, product_id)
-values (11667, 82);
-insert into SELL (seller_id, product_id)
-values (11652, 64);
-insert into SELL (seller_id, product_id)
-values (11224, 255);
-insert into SELL (seller_id, product_id)
-values (11351, 315);
-insert into SELL (seller_id, product_id)
-values (11400, 212);
-insert into SELL (seller_id, product_id)
-values (11346, 436);
-insert into SELL (seller_id, product_id)
-values (11548, 310);
-insert into SELL (seller_id, product_id)
-values (11543, 6);
-insert into SELL (seller_id, product_id)
-values (11602, 7);
-insert into SELL (seller_id, product_id)
-values (11512, 327);
-insert into SELL (seller_id, product_id)
-values (11314, 377);
-insert into SELL (seller_id, product_id)
-values (11265, 182);
-insert into SELL (seller_id, product_id)
-values (11128, 480);
-insert into SELL (seller_id, product_id)
-values (11204, 303);
-insert into SELL (seller_id, product_id)
-values (11751, 136);
-insert into SELL (seller_id, product_id)
-values (11305, 487);
-insert into SELL (seller_id, product_id)
-values (11587, 43);
-insert into SELL (seller_id, product_id)
-values (11731, 152);
-insert into SELL (seller_id, product_id)
-values (11145, 207);
-insert into SELL (seller_id, product_id)
-values (11352, 368);
-commit;
-prompt 200 records committed...
-insert into SELL (seller_id, product_id)
-values (11557, 204);
-insert into SELL (seller_id, product_id)
-values (11256, 90);
-insert into SELL (seller_id, product_id)
-values (11423, 19);
-insert into SELL (seller_id, product_id)
-values (11598, 232);
-insert into SELL (seller_id, product_id)
-values (11574, 305);
-insert into SELL (seller_id, product_id)
-values (11133, 131);
-insert into SELL (seller_id, product_id)
-values (11464, 39);
-insert into SELL (seller_id, product_id)
-values (11133, 282);
-insert into SELL (seller_id, product_id)
-values (11683, 77);
-insert into SELL (seller_id, product_id)
-values (11231, 119);
-insert into SELL (seller_id, product_id)
-values (11166, 445);
-insert into SELL (seller_id, product_id)
-values (11581, 2);
-insert into SELL (seller_id, product_id)
-values (11305, 116);
-insert into SELL (seller_id, product_id)
-values (11155, 400);
-insert into SELL (seller_id, product_id)
-values (11336, 203);
-insert into SELL (seller_id, product_id)
-values (11675, 266);
-insert into SELL (seller_id, product_id)
-values (11416, 299);
-insert into SELL (seller_id, product_id)
-values (11499, 181);
-insert into SELL (seller_id, product_id)
-values (11342, 6);
-insert into SELL (seller_id, product_id)
-values (11618, 172);
-insert into SELL (seller_id, product_id)
-values (11251, 490);
-insert into SELL (seller_id, product_id)
-values (11681, 172);
-insert into SELL (seller_id, product_id)
-values (11647, 445);
-insert into SELL (seller_id, product_id)
-values (11209, 174);
-insert into SELL (seller_id, product_id)
-values (11729, 371);
-insert into SELL (seller_id, product_id)
-values (11711, 436);
-insert into SELL (seller_id, product_id)
-values (11276, 85);
-insert into SELL (seller_id, product_id)
-values (11591, 199);
-insert into SELL (seller_id, product_id)
-values (11458, 156);
-insert into SELL (seller_id, product_id)
-values (11655, 133);
-insert into SELL (seller_id, product_id)
-values (11183, 82);
-insert into SELL (seller_id, product_id)
-values (11691, 176);
-insert into SELL (seller_id, product_id)
-values (11499, 438);
-insert into SELL (seller_id, product_id)
-values (11713, 277);
-insert into SELL (seller_id, product_id)
-values (11242, 369);
-insert into SELL (seller_id, product_id)
-values (11204, 455);
-insert into SELL (seller_id, product_id)
-values (11700, 215);
-insert into SELL (seller_id, product_id)
-values (11541, 97);
-insert into SELL (seller_id, product_id)
-values (11189, 389);
-insert into SELL (seller_id, product_id)
-values (11356, 68);
-insert into SELL (seller_id, product_id)
-values (11557, 126);
-insert into SELL (seller_id, product_id)
-values (11402, 412);
-insert into SELL (seller_id, product_id)
-values (11332, 311);
-insert into SELL (seller_id, product_id)
-values (11195, 416);
-insert into SELL (seller_id, product_id)
-values (11749, 412);
-insert into SELL (seller_id, product_id)
-values (11726, 481);
-insert into SELL (seller_id, product_id)
-values (11352, 419);
-insert into SELL (seller_id, product_id)
-values (11395, 476);
-insert into SELL (seller_id, product_id)
-values (11178, 9);
-insert into SELL (seller_id, product_id)
-values (11734, 199);
-insert into SELL (seller_id, product_id)
-values (11746, 171);
-insert into SELL (seller_id, product_id)
-values (11285, 308);
-insert into SELL (seller_id, product_id)
-values (11186, 256);
-insert into SELL (seller_id, product_id)
-values (11689, 225);
-insert into SELL (seller_id, product_id)
-values (11402, 368);
-insert into SELL (seller_id, product_id)
-values (11430, 19);
-insert into SELL (seller_id, product_id)
-values (11375, 346);
-insert into SELL (seller_id, product_id)
-values (11597, 38);
-insert into SELL (seller_id, product_id)
-values (11730, 46);
-insert into SELL (seller_id, product_id)
-values (11393, 126);
-insert into SELL (seller_id, product_id)
-values (11308, 347);
-insert into SELL (seller_id, product_id)
-values (11587, 347);
-insert into SELL (seller_id, product_id)
-values (11718, 437);
-insert into SELL (seller_id, product_id)
-values (11749, 338);
-insert into SELL (seller_id, product_id)
-values (11607, 431);
-insert into SELL (seller_id, product_id)
-values (11347, 473);
-insert into SELL (seller_id, product_id)
-values (11488, 200);
-insert into SELL (seller_id, product_id)
-values (11273, 220);
-insert into SELL (seller_id, product_id)
-values (11188, 245);
-insert into SELL (seller_id, product_id)
-values (11235, 78);
-insert into SELL (seller_id, product_id)
-values (11340, 179);
-insert into SELL (seller_id, product_id)
-values (11640, 265);
-insert into SELL (seller_id, product_id)
-values (11689, 421);
-insert into SELL (seller_id, product_id)
-values (11145, 312);
-insert into SELL (seller_id, product_id)
-values (11486, 425);
-insert into SELL (seller_id, product_id)
-values (11443, 396);
-insert into SELL (seller_id, product_id)
-values (11537, 290);
-insert into SELL (seller_id, product_id)
-values (11695, 417);
-insert into SELL (seller_id, product_id)
-values (11176, 324);
-insert into SELL (seller_id, product_id)
-values (11625, 358);
-insert into SELL (seller_id, product_id)
-values (11753, 188);
-insert into SELL (seller_id, product_id)
-values (11235, 173);
-insert into SELL (seller_id, product_id)
 values (11114, 374);
-insert into SELL (seller_id, product_id)
-values (11526, 12);
-insert into SELL (seller_id, product_id)
-values (11408, 466);
-insert into SELL (seller_id, product_id)
-values (11657, 268);
-insert into SELL (seller_id, product_id)
-values (11364, 152);
-insert into SELL (seller_id, product_id)
-values (11147, 32);
-insert into SELL (seller_id, product_id)
-values (11554, 155);
-insert into SELL (seller_id, product_id)
-values (11586, 110);
-insert into SELL (seller_id, product_id)
-values (11248, 398);
-insert into SELL (seller_id, product_id)
-values (11180, 44);
-insert into SELL (seller_id, product_id)
-values (11411, 238);
-insert into SELL (seller_id, product_id)
-values (11624, 487);
-insert into SELL (seller_id, product_id)
-values (11231, 304);
-insert into SELL (seller_id, product_id)
-values (11451, 122);
-insert into SELL (seller_id, product_id)
-values (11732, 152);
-insert into SELL (seller_id, product_id)
-values (11520, 200);
-insert into SELL (seller_id, product_id)
-values (11604, 402);
-insert into SELL (seller_id, product_id)
-values (11683, 219);
-commit;
-prompt 300 records committed...
-insert into SELL (seller_id, product_id)
-values (11719, 380);
-insert into SELL (seller_id, product_id)
-values (11598, 22);
-insert into SELL (seller_id, product_id)
-values (11199, 160);
-insert into SELL (seller_id, product_id)
-values (11319, 6);
-insert into SELL (seller_id, product_id)
-values (11171, 252);
-insert into SELL (seller_id, product_id)
-values (11302, 138);
-insert into SELL (seller_id, product_id)
-values (11352, 188);
-insert into SELL (seller_id, product_id)
-values (11668, 90);
-insert into SELL (seller_id, product_id)
-values (11379, 349);
-insert into SELL (seller_id, product_id)
-values (11362, 454);
-insert into SELL (seller_id, product_id)
-values (11449, 149);
-insert into SELL (seller_id, product_id)
-values (11257, 178);
-insert into SELL (seller_id, product_id)
-values (11507, 121);
-insert into SELL (seller_id, product_id)
-values (11119, 322);
-insert into SELL (seller_id, product_id)
-values (11672, 282);
-insert into SELL (seller_id, product_id)
-values (11309, 120);
-insert into SELL (seller_id, product_id)
-values (11519, 104);
-insert into SELL (seller_id, product_id)
-values (11417, 154);
-insert into SELL (seller_id, product_id)
-values (11227, 117);
-insert into SELL (seller_id, product_id)
-values (11176, 355);
-insert into SELL (seller_id, product_id)
-values (11240, 345);
-insert into SELL (seller_id, product_id)
-values (11367, 461);
-insert into SELL (seller_id, product_id)
-values (11167, 304);
-insert into SELL (seller_id, product_id)
-values (11301, 294);
-insert into SELL (seller_id, product_id)
-values (11411, 450);
-insert into SELL (seller_id, product_id)
-values (11315, 315);
-insert into SELL (seller_id, product_id)
-values (11406, 159);
-insert into SELL (seller_id, product_id)
-values (11329, 68);
-insert into SELL (seller_id, product_id)
-values (11539, 301);
-insert into SELL (seller_id, product_id)
-values (11637, 161);
-insert into SELL (seller_id, product_id)
-values (11670, 294);
-insert into SELL (seller_id, product_id)
-values (11199, 206);
-insert into SELL (seller_id, product_id)
-values (11678, 411);
-insert into SELL (seller_id, product_id)
-values (11242, 93);
-insert into SELL (seller_id, product_id)
-values (11192, 467);
-insert into SELL (seller_id, product_id)
-values (11293, 235);
-insert into SELL (seller_id, product_id)
-values (11657, 474);
-insert into SELL (seller_id, product_id)
-values (11645, 8);
-insert into SELL (seller_id, product_id)
-values (11701, 60);
-insert into SELL (seller_id, product_id)
-values (11651, 147);
-insert into SELL (seller_id, product_id)
-values (11651, 38);
-insert into SELL (seller_id, product_id)
-values (11654, 167);
-insert into SELL (seller_id, product_id)
-values (11338, 184);
-insert into SELL (seller_id, product_id)
-values (11555, 293);
-insert into SELL (seller_id, product_id)
-values (11486, 321);
-insert into SELL (seller_id, product_id)
-values (11522, 178);
-insert into SELL (seller_id, product_id)
-values (11632, 17);
-insert into SELL (seller_id, product_id)
-values (11429, 202);
-insert into SELL (seller_id, product_id)
-values (11286, 258);
-insert into SELL (seller_id, product_id)
-values (11614, 357);
-insert into SELL (seller_id, product_id)
-values (11498, 214);
-insert into SELL (seller_id, product_id)
-values (11197, 263);
-insert into SELL (seller_id, product_id)
-values (11518, 101);
-insert into SELL (seller_id, product_id)
-values (11443, 34);
-insert into SELL (seller_id, product_id)
-values (11692, 41);
-insert into SELL (seller_id, product_id)
-values (11619, 351);
-insert into SELL (seller_id, product_id)
-values (11115, 249);
-insert into SELL (seller_id, product_id)
-values (11669, 210);
-insert into SELL (seller_id, product_id)
-values (11491, 108);
-insert into SELL (seller_id, product_id)
-values (11429, 348);
-insert into SELL (seller_id, product_id)
-values (11504, 219);
-insert into SELL (seller_id, product_id)
-values (11264, 196);
-insert into SELL (seller_id, product_id)
-values (11279, 305);
-insert into SELL (seller_id, product_id)
-values (11351, 59);
-insert into SELL (seller_id, product_id)
-values (11561, 249);
-insert into SELL (seller_id, product_id)
-values (11542, 83);
-insert into SELL (seller_id, product_id)
-values (11259, 374);
-insert into SELL (seller_id, product_id)
-values (11322, 42);
-insert into SELL (seller_id, product_id)
-values (11715, 88);
-insert into SELL (seller_id, product_id)
-values (11457, 163);
-insert into SELL (seller_id, product_id)
-values (11517, 132);
-insert into SELL (seller_id, product_id)
-values (11335, 352);
-insert into SELL (seller_id, product_id)
-values (11592, 411);
-insert into SELL (seller_id, product_id)
-values (11713, 247);
-insert into SELL (seller_id, product_id)
-values (11472, 350);
-insert into SELL (seller_id, product_id)
-values (11346, 195);
-insert into SELL (seller_id, product_id)
-values (11597, 441);
-insert into SELL (seller_id, product_id)
-values (11443, 383);
-insert into SELL (seller_id, product_id)
-values (11317, 318);
-insert into SELL (seller_id, product_id)
-values (11546, 445);
-insert into SELL (seller_id, product_id)
-values (11288, 160);
-insert into SELL (seller_id, product_id)
-values (11753, 484);
-insert into SELL (seller_id, product_id)
-values (11547, 25);
-insert into SELL (seller_id, product_id)
-values (11702, 142);
-insert into SELL (seller_id, product_id)
-values (11687, 218);
-insert into SELL (seller_id, product_id)
-values (11177, 367);
-insert into SELL (seller_id, product_id)
-values (11236, 8);
-insert into SELL (seller_id, product_id)
-values (11508, 311);
-insert into SELL (seller_id, product_id)
-values (11142, 11);
-insert into SELL (seller_id, product_id)
-values (11258, 183);
-insert into SELL (seller_id, product_id)
-values (11547, 379);
-insert into SELL (seller_id, product_id)
-values (11307, 269);
-insert into SELL (seller_id, product_id)
-values (11617, 360);
-insert into SELL (seller_id, product_id)
-values (11432, 267);
-insert into SELL (seller_id, product_id)
-values (11487, 494);
-insert into SELL (seller_id, product_id)
-values (11227, 274);
-insert into SELL (seller_id, product_id)
-values (11378, 425);
-insert into SELL (seller_id, product_id)
-values (11437, 404);
-insert into SELL (seller_id, product_id)
-values (11498, 262);
-insert into SELL (seller_id, product_id)
-values (11329, 122);
-commit;
-prompt 400 records committed...
-insert into SELL (seller_id, product_id)
-values (11373, 196);
-insert into SELL (seller_id, product_id)
-values (11484, 472);
-insert into SELL (seller_id, product_id)
-values (11246, 124);
-insert into SELL (seller_id, product_id)
-values (11476, 120);
-insert into SELL (seller_id, product_id)
-values (11250, 179);
-insert into SELL (seller_id, product_id)
-values (11492, 22);
-insert into SELL (seller_id, product_id)
-values (11343, 196);
-insert into SELL (seller_id, product_id)
-values (11568, 486);
-insert into SELL (seller_id, product_id)
-values (11261, 253);
-insert into SELL (seller_id, product_id)
-values (11345, 219);
-insert into SELL (seller_id, product_id)
-values (11215, 71);
-insert into SELL (seller_id, product_id)
-values (11482, 169);
-insert into SELL (seller_id, product_id)
-values (11613, 156);
-insert into SELL (seller_id, product_id)
-values (11504, 267);
-insert into SELL (seller_id, product_id)
-values (11556, 242);
-insert into SELL (seller_id, product_id)
-values (11395, 11);
-insert into SELL (seller_id, product_id)
-values (11209, 130);
-insert into SELL (seller_id, product_id)
-values (11399, 157);
-insert into SELL (seller_id, product_id)
-values (11628, 232);
-insert into SELL (seller_id, product_id)
-values (11156, 389);
-insert into SELL (seller_id, product_id)
-values (11623, 233);
-insert into SELL (seller_id, product_id)
-values (11419, 365);
-insert into SELL (seller_id, product_id)
-values (11147, 337);
-insert into SELL (seller_id, product_id)
-values (11335, 248);
-insert into SELL (seller_id, product_id)
-values (11378, 312);
-insert into SELL (seller_id, product_id)
-values (11385, 462);
-insert into SELL (seller_id, product_id)
-values (11562, 57);
-insert into SELL (seller_id, product_id)
-values (11381, 482);
-insert into SELL (seller_id, product_id)
-values (11301, 111);
-insert into SELL (seller_id, product_id)
-values (11328, 106);
-insert into SELL (seller_id, product_id)
-values (11525, 146);
-insert into SELL (seller_id, product_id)
-values (11399, 309);
-insert into SELL (seller_id, product_id)
-values (11476, 46);
-insert into SELL (seller_id, product_id)
-values (11334, 436);
-insert into SELL (seller_id, product_id)
-values (11498, 372);
-insert into SELL (seller_id, product_id)
-values (11694, 471);
-insert into SELL (seller_id, product_id)
-values (11490, 148);
-insert into SELL (seller_id, product_id)
-values (11758, 428);
-insert into SELL (seller_id, product_id)
-values (11255, 385);
-insert into SELL (seller_id, product_id)
-values (11372, 413);
-insert into SELL (seller_id, product_id)
-values (11361, 149);
-insert into SELL (seller_id, product_id)
-values (11200, 83);
-insert into SELL (seller_id, product_id)
-values (11325, 261);
-insert into SELL (seller_id, product_id)
-values (11221, 304);
-insert into SELL (seller_id, product_id)
-values (11217, 220);
-insert into SELL (seller_id, product_id)
-values (11350, 54);
-insert into SELL (seller_id, product_id)
-values (11220, 198);
-insert into SELL (seller_id, product_id)
-values (11743, 10);
-insert into SELL (seller_id, product_id)
-values (11656, 380);
-insert into SELL (seller_id, product_id)
-values (11146, 200);
-insert into SELL (seller_id, product_id)
-values (11607, 372);
-insert into SELL (seller_id, product_id)
-values (11563, 435);
-insert into SELL (seller_id, product_id)
-values (11552, 58);
-insert into SELL (seller_id, product_id)
-values (11697, 25);
-insert into SELL (seller_id, product_id)
-values (11325, 459);
-insert into SELL (seller_id, product_id)
-values (11394, 335);
-insert into SELL (seller_id, product_id)
-values (11753, 280);
-insert into SELL (seller_id, product_id)
-values (11177, 1);
-insert into SELL (seller_id, product_id)
-values (11585, 287);
-insert into SELL (seller_id, product_id)
-values (11228, 436);
-insert into SELL (seller_id, product_id)
-values (11664, 83);
-insert into SELL (seller_id, product_id)
-values (11127, 342);
 insert into SELL (seller_id, product_id)
 values (11115, 162);
 insert into SELL (seller_id, product_id)
-values (11132, 62);
+values (11115, 249);
 insert into SELL (seller_id, product_id)
-values (11727, 494);
-insert into SELL (seller_id, product_id)
-values (11428, 171);
-insert into SELL (seller_id, product_id)
-values (11742, 349);
+values (11116, 479);
 insert into SELL (seller_id, product_id)
 values (11118, 80);
 insert into SELL (seller_id, product_id)
-values (11385, 262);
+values (11119, 322);
 insert into SELL (seller_id, product_id)
-values (11489, 55);
+values (11121, 27);
 insert into SELL (seller_id, product_id)
-values (11674, 219);
+values (11124, 287);
 insert into SELL (seller_id, product_id)
-values (11373, 332);
-insert into SELL (seller_id, product_id)
-values (11643, 149);
-insert into SELL (seller_id, product_id)
-values (11146, 493);
-insert into SELL (seller_id, product_id)
-values (11159, 22);
-insert into SELL (seller_id, product_id)
-values (11559, 418);
-insert into SELL (seller_id, product_id)
-values (11165, 450);
-insert into SELL (seller_id, product_id)
-values (11284, 317);
-insert into SELL (seller_id, product_id)
-values (11695, 339);
+values (11125, 93);
 insert into SELL (seller_id, product_id)
 values (11126, 401);
 insert into SELL (seller_id, product_id)
-values (11515, 158);
+values (11127, 342);
 insert into SELL (seller_id, product_id)
-values (11570, 429);
+values (11128, 480);
 insert into SELL (seller_id, product_id)
-values (11376, 209);
+values (11132, 62);
 insert into SELL (seller_id, product_id)
-values (11290, 418);
+values (11133, 131);
 insert into SELL (seller_id, product_id)
-values (11385, 232);
+values (11133, 282);
 insert into SELL (seller_id, product_id)
-values (11153, 36);
+values (11138, 128);
 insert into SELL (seller_id, product_id)
-values (11330, 356);
+values (11138, 273);
 insert into SELL (seller_id, product_id)
-values (11531, 205);
+values (11138, 297);
 insert into SELL (seller_id, product_id)
-values (11268, 101);
+values (11140, 79);
 insert into SELL (seller_id, product_id)
-values (11676, 206);
+values (11142, 11);
+insert into SELL (seller_id, product_id)
+values (11143, 156);
+insert into SELL (seller_id, product_id)
+values (11145, 207);
+insert into SELL (seller_id, product_id)
+values (11145, 312);
+insert into SELL (seller_id, product_id)
+values (11146, 200);
+insert into SELL (seller_id, product_id)
+values (11146, 493);
+insert into SELL (seller_id, product_id)
+values (11147, 32);
+insert into SELL (seller_id, product_id)
+values (11147, 337);
 insert into SELL (seller_id, product_id)
 values (11149, 133);
 insert into SELL (seller_id, product_id)
-values (11647, 16);
+values (11152, 403);
 insert into SELL (seller_id, product_id)
-values (11665, 255);
+values (11153, 36);
 insert into SELL (seller_id, product_id)
-values (11560, 411);
+values (11153, 336);
 insert into SELL (seller_id, product_id)
-values (11506, 76);
+values (11154, 105);
 insert into SELL (seller_id, product_id)
-values (11588, 448);
+values (11155, 400);
+insert into SELL (seller_id, product_id)
+values (11156, 389);
+insert into SELL (seller_id, product_id)
+values (11157, 16);
+insert into SELL (seller_id, product_id)
+values (11158, 146);
+insert into SELL (seller_id, product_id)
+values (11159, 22);
+insert into SELL (seller_id, product_id)
+values (11165, 450);
+insert into SELL (seller_id, product_id)
+values (11166, 365);
+insert into SELL (seller_id, product_id)
+values (11166, 445);
+insert into SELL (seller_id, product_id)
+values (11167, 304);
+insert into SELL (seller_id, product_id)
+values (11171, 252);
+insert into SELL (seller_id, product_id)
+values (11176, 324);
+insert into SELL (seller_id, product_id)
+values (11176, 355);
+insert into SELL (seller_id, product_id)
+values (11177, 1);
+insert into SELL (seller_id, product_id)
+values (11177, 367);
+insert into SELL (seller_id, product_id)
+values (11178, 9);
+insert into SELL (seller_id, product_id)
+values (11180, 44);
+insert into SELL (seller_id, product_id)
+values (11182, 222);
+insert into SELL (seller_id, product_id)
+values (11183, 82);
+insert into SELL (seller_id, product_id)
+values (11184, 129);
+insert into SELL (seller_id, product_id)
+values (11186, 256);
+insert into SELL (seller_id, product_id)
+values (11188, 245);
+insert into SELL (seller_id, product_id)
+values (11189, 389);
+insert into SELL (seller_id, product_id)
+values (11192, 467);
+insert into SELL (seller_id, product_id)
+values (11195, 416);
+insert into SELL (seller_id, product_id)
+values (11195, 488);
+insert into SELL (seller_id, product_id)
+values (11197, 263);
+insert into SELL (seller_id, product_id)
+values (11197, 419);
+insert into SELL (seller_id, product_id)
+values (11199, 160);
+insert into SELL (seller_id, product_id)
+values (11199, 206);
+insert into SELL (seller_id, product_id)
+values (11200, 83);
+insert into SELL (seller_id, product_id)
+values (11201, 163);
+insert into SELL (seller_id, product_id)
+values (11204, 250);
+insert into SELL (seller_id, product_id)
+values (11204, 303);
+insert into SELL (seller_id, product_id)
+values (11204, 455);
+insert into SELL (seller_id, product_id)
+values (11209, 130);
+insert into SELL (seller_id, product_id)
+values (11209, 174);
+insert into SELL (seller_id, product_id)
+values (11213, 373);
+insert into SELL (seller_id, product_id)
+values (11215, 71);
+insert into SELL (seller_id, product_id)
+values (11217, 220);
+insert into SELL (seller_id, product_id)
+values (11219, 228);
+insert into SELL (seller_id, product_id)
+values (11220, 198);
+insert into SELL (seller_id, product_id)
+values (11221, 304);
+insert into SELL (seller_id, product_id)
+values (11223, 100);
+insert into SELL (seller_id, product_id)
+values (11224, 255);
+insert into SELL (seller_id, product_id)
+values (11227, 117);
+insert into SELL (seller_id, product_id)
+values (11227, 274);
+insert into SELL (seller_id, product_id)
+values (11228, 436);
+insert into SELL (seller_id, product_id)
+values (11231, 119);
+insert into SELL (seller_id, product_id)
+values (11231, 304);
+insert into SELL (seller_id, product_id)
+values (11235, 22);
+insert into SELL (seller_id, product_id)
+values (11235, 78);
+insert into SELL (seller_id, product_id)
+values (11235, 173);
+insert into SELL (seller_id, product_id)
+values (11236, 8);
+insert into SELL (seller_id, product_id)
+values (11237, 54);
+insert into SELL (seller_id, product_id)
+values (11239, 109);
+insert into SELL (seller_id, product_id)
+values (11240, 345);
+insert into SELL (seller_id, product_id)
+values (11242, 93);
+insert into SELL (seller_id, product_id)
+values (11242, 369);
+insert into SELL (seller_id, product_id)
+values (11244, 323);
+insert into SELL (seller_id, product_id)
+values (11246, 124);
+insert into SELL (seller_id, product_id)
+values (11248, 398);
+insert into SELL (seller_id, product_id)
+values (11250, 179);
+insert into SELL (seller_id, product_id)
+values (11251, 80);
+insert into SELL (seller_id, product_id)
+values (11251, 307);
+insert into SELL (seller_id, product_id)
+values (11251, 490);
+insert into SELL (seller_id, product_id)
+values (11255, 385);
+insert into SELL (seller_id, product_id)
+values (11256, 90);
+insert into SELL (seller_id, product_id)
+values (11257, 178);
+commit;
+prompt 100 records committed...
+insert into SELL (seller_id, product_id)
+values (11258, 183);
+insert into SELL (seller_id, product_id)
+values (11259, 374);
+insert into SELL (seller_id, product_id)
+values (11261, 253);
+insert into SELL (seller_id, product_id)
+values (11264, 196);
+insert into SELL (seller_id, product_id)
+values (11265, 182);
+insert into SELL (seller_id, product_id)
+values (11268, 101);
+insert into SELL (seller_id, product_id)
+values (11272, 361);
+insert into SELL (seller_id, product_id)
+values (11273, 220);
+insert into SELL (seller_id, product_id)
+values (11276, 85);
+insert into SELL (seller_id, product_id)
+values (11279, 305);
+insert into SELL (seller_id, product_id)
+values (11279, 425);
+insert into SELL (seller_id, product_id)
+values (11284, 317);
+insert into SELL (seller_id, product_id)
+values (11285, 308);
+insert into SELL (seller_id, product_id)
+values (11286, 258);
+insert into SELL (seller_id, product_id)
+values (11288, 160);
+insert into SELL (seller_id, product_id)
+values (11289, 170);
+insert into SELL (seller_id, product_id)
+values (11290, 418);
+insert into SELL (seller_id, product_id)
+values (11292, 417);
+insert into SELL (seller_id, product_id)
+values (11293, 235);
+insert into SELL (seller_id, product_id)
+values (11301, 52);
+insert into SELL (seller_id, product_id)
+values (11301, 111);
+insert into SELL (seller_id, product_id)
+values (11301, 294);
+insert into SELL (seller_id, product_id)
+values (11302, 138);
+insert into SELL (seller_id, product_id)
+values (11303, 270);
+insert into SELL (seller_id, product_id)
+values (11305, 116);
+insert into SELL (seller_id, product_id)
+values (11305, 487);
+insert into SELL (seller_id, product_id)
+values (11307, 269);
+insert into SELL (seller_id, product_id)
+values (11308, 347);
+insert into SELL (seller_id, product_id)
+values (11308, 442);
+insert into SELL (seller_id, product_id)
+values (11309, 120);
+insert into SELL (seller_id, product_id)
+values (11314, 377);
+insert into SELL (seller_id, product_id)
+values (11315, 293);
+insert into SELL (seller_id, product_id)
+values (11315, 315);
+insert into SELL (seller_id, product_id)
+values (11317, 318);
+insert into SELL (seller_id, product_id)
+values (11319, 6);
+insert into SELL (seller_id, product_id)
+values (11322, 42);
+insert into SELL (seller_id, product_id)
+values (11322, 257);
+insert into SELL (seller_id, product_id)
+values (11324, 149);
+insert into SELL (seller_id, product_id)
+values (11325, 261);
+insert into SELL (seller_id, product_id)
+values (11325, 459);
+insert into SELL (seller_id, product_id)
+values (11328, 106);
+insert into SELL (seller_id, product_id)
+values (11329, 68);
+insert into SELL (seller_id, product_id)
+values (11329, 122);
+insert into SELL (seller_id, product_id)
+values (11330, 356);
+insert into SELL (seller_id, product_id)
+values (11332, 311);
+insert into SELL (seller_id, product_id)
+values (11333, 286);
+insert into SELL (seller_id, product_id)
+values (11334, 436);
+insert into SELL (seller_id, product_id)
+values (11335, 248);
+insert into SELL (seller_id, product_id)
+values (11335, 352);
+insert into SELL (seller_id, product_id)
+values (11336, 203);
+insert into SELL (seller_id, product_id)
+values (11336, 251);
+insert into SELL (seller_id, product_id)
+values (11338, 184);
+insert into SELL (seller_id, product_id)
+values (11338, 278);
+insert into SELL (seller_id, product_id)
+values (11340, 179);
+insert into SELL (seller_id, product_id)
+values (11342, 6);
+insert into SELL (seller_id, product_id)
+values (11342, 262);
+insert into SELL (seller_id, product_id)
+values (11343, 196);
 insert into SELL (seller_id, product_id)
 values (11344, 47);
 insert into SELL (seller_id, product_id)
-values (11700, 413);
+values (11344, 143);
+insert into SELL (seller_id, product_id)
+values (11345, 219);
+insert into SELL (seller_id, product_id)
+values (11345, 334);
+insert into SELL (seller_id, product_id)
+values (11346, 195);
+insert into SELL (seller_id, product_id)
+values (11346, 436);
+insert into SELL (seller_id, product_id)
+values (11347, 58);
+insert into SELL (seller_id, product_id)
+values (11347, 473);
+insert into SELL (seller_id, product_id)
+values (11350, 54);
+insert into SELL (seller_id, product_id)
+values (11350, 467);
+insert into SELL (seller_id, product_id)
+values (11351, 59);
+insert into SELL (seller_id, product_id)
+values (11351, 315);
+insert into SELL (seller_id, product_id)
+values (11352, 188);
+insert into SELL (seller_id, product_id)
+values (11352, 302);
+insert into SELL (seller_id, product_id)
+values (11352, 368);
+insert into SELL (seller_id, product_id)
+values (11352, 419);
+insert into SELL (seller_id, product_id)
+values (11353, 409);
+insert into SELL (seller_id, product_id)
+values (11355, 61);
+insert into SELL (seller_id, product_id)
+values (11356, 68);
+insert into SELL (seller_id, product_id)
+values (11361, 149);
+insert into SELL (seller_id, product_id)
+values (11362, 454);
+insert into SELL (seller_id, product_id)
+values (11362, 489);
+insert into SELL (seller_id, product_id)
+values (11363, 412);
+insert into SELL (seller_id, product_id)
+values (11364, 122);
+insert into SELL (seller_id, product_id)
+values (11364, 152);
+insert into SELL (seller_id, product_id)
+values (11365, 3);
+insert into SELL (seller_id, product_id)
+values (11367, 461);
+insert into SELL (seller_id, product_id)
+values (11369, 482);
+insert into SELL (seller_id, product_id)
+values (11371, 387);
+insert into SELL (seller_id, product_id)
+values (11372, 413);
+insert into SELL (seller_id, product_id)
+values (11373, 196);
+insert into SELL (seller_id, product_id)
+values (11373, 332);
+insert into SELL (seller_id, product_id)
+values (11374, 24);
+insert into SELL (seller_id, product_id)
+values (11374, 55);
+insert into SELL (seller_id, product_id)
+values (11374, 490);
+insert into SELL (seller_id, product_id)
+values (11375, 346);
+insert into SELL (seller_id, product_id)
+values (11376, 209);
+insert into SELL (seller_id, product_id)
+values (11378, 312);
+insert into SELL (seller_id, product_id)
+values (11378, 425);
+insert into SELL (seller_id, product_id)
+values (11379, 349);
+insert into SELL (seller_id, product_id)
+values (11379, 395);
+insert into SELL (seller_id, product_id)
+values (11381, 482);
+insert into SELL (seller_id, product_id)
+values (11383, 90);
+commit;
+prompt 200 records committed...
+insert into SELL (seller_id, product_id)
+values (11385, 232);
+insert into SELL (seller_id, product_id)
+values (11385, 262);
+insert into SELL (seller_id, product_id)
+values (11385, 462);
+insert into SELL (seller_id, product_id)
+values (11388, 29);
+insert into SELL (seller_id, product_id)
+values (11388, 462);
+insert into SELL (seller_id, product_id)
+values (11389, 452);
+insert into SELL (seller_id, product_id)
+values (11391, 41);
+insert into SELL (seller_id, product_id)
+values (11391, 303);
+insert into SELL (seller_id, product_id)
+values (11393, 126);
+insert into SELL (seller_id, product_id)
+values (11394, 335);
+insert into SELL (seller_id, product_id)
+values (11395, 11);
+insert into SELL (seller_id, product_id)
+values (11395, 476);
+insert into SELL (seller_id, product_id)
+values (11397, 90);
+insert into SELL (seller_id, product_id)
+values (11399, 157);
+insert into SELL (seller_id, product_id)
+values (11399, 231);
+insert into SELL (seller_id, product_id)
+values (11399, 309);
+insert into SELL (seller_id, product_id)
+values (11399, 347);
+insert into SELL (seller_id, product_id)
+values (11400, 212);
+insert into SELL (seller_id, product_id)
+values (11402, 368);
+insert into SELL (seller_id, product_id)
+values (11402, 412);
+insert into SELL (seller_id, product_id)
+values (11402, 469);
+insert into SELL (seller_id, product_id)
+values (11404, 135);
+insert into SELL (seller_id, product_id)
+values (11404, 325);
+insert into SELL (seller_id, product_id)
+values (11406, 159);
+insert into SELL (seller_id, product_id)
+values (11407, 240);
+insert into SELL (seller_id, product_id)
+values (11407, 433);
+insert into SELL (seller_id, product_id)
+values (11408, 355);
+insert into SELL (seller_id, product_id)
+values (11408, 466);
+insert into SELL (seller_id, product_id)
+values (11410, 256);
+insert into SELL (seller_id, product_id)
+values (11411, 238);
+insert into SELL (seller_id, product_id)
+values (11411, 450);
+insert into SELL (seller_id, product_id)
+values (11412, 85);
+insert into SELL (seller_id, product_id)
+values (11414, 175);
+insert into SELL (seller_id, product_id)
+values (11416, 68);
+insert into SELL (seller_id, product_id)
+values (11416, 299);
+insert into SELL (seller_id, product_id)
+values (11417, 146);
+insert into SELL (seller_id, product_id)
+values (11417, 154);
+insert into SELL (seller_id, product_id)
+values (11417, 481);
+insert into SELL (seller_id, product_id)
+values (11419, 365);
+insert into SELL (seller_id, product_id)
+values (11419, 459);
+insert into SELL (seller_id, product_id)
+values (11420, 29);
+insert into SELL (seller_id, product_id)
+values (11423, 19);
+insert into SELL (seller_id, product_id)
+values (11423, 84);
+insert into SELL (seller_id, product_id)
+values (11425, 127);
+insert into SELL (seller_id, product_id)
+values (11426, 329);
+insert into SELL (seller_id, product_id)
+values (11427, 451);
+insert into SELL (seller_id, product_id)
+values (11428, 171);
+insert into SELL (seller_id, product_id)
+values (11429, 202);
+insert into SELL (seller_id, product_id)
+values (11429, 348);
+insert into SELL (seller_id, product_id)
+values (11430, 19);
+insert into SELL (seller_id, product_id)
+values (11432, 267);
+insert into SELL (seller_id, product_id)
+values (11436, 275);
+insert into SELL (seller_id, product_id)
+values (11437, 404);
+insert into SELL (seller_id, product_id)
+values (11438, 358);
+insert into SELL (seller_id, product_id)
+values (11439, 103);
+insert into SELL (seller_id, product_id)
+values (11442, 59);
+insert into SELL (seller_id, product_id)
+values (11443, 34);
+insert into SELL (seller_id, product_id)
+values (11443, 383);
+insert into SELL (seller_id, product_id)
+values (11443, 396);
+insert into SELL (seller_id, product_id)
+values (11446, 245);
+insert into SELL (seller_id, product_id)
+values (11447, 187);
+insert into SELL (seller_id, product_id)
+values (11449, 149);
+insert into SELL (seller_id, product_id)
+values (11451, 122);
+insert into SELL (seller_id, product_id)
+values (11455, 358);
+insert into SELL (seller_id, product_id)
+values (11457, 163);
+insert into SELL (seller_id, product_id)
+values (11458, 156);
+insert into SELL (seller_id, product_id)
+values (11460, 135);
+insert into SELL (seller_id, product_id)
+values (11463, 445);
+insert into SELL (seller_id, product_id)
+values (11464, 39);
+insert into SELL (seller_id, product_id)
+values (11467, 494);
+insert into SELL (seller_id, product_id)
+values (11468, 436);
+insert into SELL (seller_id, product_id)
+values (11472, 350);
+insert into SELL (seller_id, product_id)
+values (11475, 307);
+insert into SELL (seller_id, product_id)
+values (11476, 46);
+insert into SELL (seller_id, product_id)
+values (11476, 120);
+insert into SELL (seller_id, product_id)
+values (11479, 208);
+insert into SELL (seller_id, product_id)
+values (11482, 169);
+insert into SELL (seller_id, product_id)
+values (11483, 65);
+insert into SELL (seller_id, product_id)
+values (11484, 472);
+insert into SELL (seller_id, product_id)
+values (11486, 321);
+insert into SELL (seller_id, product_id)
+values (11486, 425);
+insert into SELL (seller_id, product_id)
+values (11487, 85);
+insert into SELL (seller_id, product_id)
+values (11487, 494);
+insert into SELL (seller_id, product_id)
+values (11488, 200);
+insert into SELL (seller_id, product_id)
+values (11489, 55);
+insert into SELL (seller_id, product_id)
+values (11490, 148);
+insert into SELL (seller_id, product_id)
+values (11491, 108);
+insert into SELL (seller_id, product_id)
+values (11492, 22);
+insert into SELL (seller_id, product_id)
+values (11492, 272);
+insert into SELL (seller_id, product_id)
+values (11496, 77);
+insert into SELL (seller_id, product_id)
+values (11498, 214);
+insert into SELL (seller_id, product_id)
+values (11498, 262);
+insert into SELL (seller_id, product_id)
+values (11498, 372);
+insert into SELL (seller_id, product_id)
+values (11499, 181);
+insert into SELL (seller_id, product_id)
+values (11499, 224);
+insert into SELL (seller_id, product_id)
+values (11499, 438);
+insert into SELL (seller_id, product_id)
+values (11500, 467);
+insert into SELL (seller_id, product_id)
+values (11504, 219);
+insert into SELL (seller_id, product_id)
+values (11504, 267);
+insert into SELL (seller_id, product_id)
+values (11505, 361);
+commit;
+prompt 300 records committed...
+insert into SELL (seller_id, product_id)
+values (11506, 76);
+insert into SELL (seller_id, product_id)
+values (11507, 121);
+insert into SELL (seller_id, product_id)
+values (11507, 455);
+insert into SELL (seller_id, product_id)
+values (11508, 311);
+insert into SELL (seller_id, product_id)
+values (11511, 88);
+insert into SELL (seller_id, product_id)
+values (11512, 177);
+insert into SELL (seller_id, product_id)
+values (11512, 327);
+insert into SELL (seller_id, product_id)
+values (11515, 77);
+insert into SELL (seller_id, product_id)
+values (11515, 158);
+insert into SELL (seller_id, product_id)
+values (11515, 421);
+insert into SELL (seller_id, product_id)
+values (11517, 132);
+insert into SELL (seller_id, product_id)
+values (11518, 101);
+insert into SELL (seller_id, product_id)
+values (11519, 104);
+insert into SELL (seller_id, product_id)
+values (11520, 200);
+insert into SELL (seller_id, product_id)
+values (11522, 178);
+insert into SELL (seller_id, product_id)
+values (11523, 411);
+insert into SELL (seller_id, product_id)
+values (11525, 146);
+insert into SELL (seller_id, product_id)
+values (11526, 12);
+insert into SELL (seller_id, product_id)
+values (11526, 42);
+insert into SELL (seller_id, product_id)
+values (11529, 198);
+insert into SELL (seller_id, product_id)
+values (11531, 197);
+insert into SELL (seller_id, product_id)
+values (11531, 205);
+insert into SELL (seller_id, product_id)
+values (11535, 123);
+insert into SELL (seller_id, product_id)
+values (11537, 132);
+insert into SELL (seller_id, product_id)
+values (11537, 290);
+insert into SELL (seller_id, product_id)
+values (11538, 494);
+insert into SELL (seller_id, product_id)
+values (11539, 301);
+insert into SELL (seller_id, product_id)
+values (11540, 417);
+insert into SELL (seller_id, product_id)
+values (11541, 97);
+insert into SELL (seller_id, product_id)
+values (11542, 83);
+insert into SELL (seller_id, product_id)
+values (11543, 6);
+insert into SELL (seller_id, product_id)
+values (11545, 438);
+insert into SELL (seller_id, product_id)
+values (11546, 445);
+insert into SELL (seller_id, product_id)
+values (11547, 25);
+insert into SELL (seller_id, product_id)
+values (11547, 379);
+insert into SELL (seller_id, product_id)
+values (11548, 288);
+insert into SELL (seller_id, product_id)
+values (11548, 310);
+insert into SELL (seller_id, product_id)
+values (11551, 70);
+insert into SELL (seller_id, product_id)
+values (11552, 58);
+insert into SELL (seller_id, product_id)
+values (11553, 104);
+insert into SELL (seller_id, product_id)
+values (11554, 155);
+insert into SELL (seller_id, product_id)
+values (11554, 448);
+insert into SELL (seller_id, product_id)
+values (11554, 471);
+insert into SELL (seller_id, product_id)
+values (11555, 293);
+insert into SELL (seller_id, product_id)
+values (11556, 242);
+insert into SELL (seller_id, product_id)
+values (11557, 126);
+insert into SELL (seller_id, product_id)
+values (11557, 204);
+insert into SELL (seller_id, product_id)
+values (11559, 418);
+insert into SELL (seller_id, product_id)
+values (11560, 411);
+insert into SELL (seller_id, product_id)
+values (11560, 485);
+insert into SELL (seller_id, product_id)
+values (11561, 249);
+insert into SELL (seller_id, product_id)
+values (11561, 317);
+insert into SELL (seller_id, product_id)
+values (11562, 28);
+insert into SELL (seller_id, product_id)
+values (11562, 57);
+insert into SELL (seller_id, product_id)
+values (11563, 435);
+insert into SELL (seller_id, product_id)
+values (11566, 3);
+insert into SELL (seller_id, product_id)
+values (11567, 260);
+insert into SELL (seller_id, product_id)
+values (11568, 486);
+insert into SELL (seller_id, product_id)
+values (11570, 429);
+insert into SELL (seller_id, product_id)
+values (11572, 122);
+insert into SELL (seller_id, product_id)
+values (11574, 305);
+insert into SELL (seller_id, product_id)
+values (11574, 361);
+insert into SELL (seller_id, product_id)
+values (11580, 449);
+insert into SELL (seller_id, product_id)
+values (11581, 2);
+insert into SELL (seller_id, product_id)
+values (11585, 287);
+insert into SELL (seller_id, product_id)
+values (11586, 110);
+insert into SELL (seller_id, product_id)
+values (11587, 43);
+insert into SELL (seller_id, product_id)
+values (11587, 347);
+insert into SELL (seller_id, product_id)
+values (11588, 312);
+insert into SELL (seller_id, product_id)
+values (11588, 448);
+insert into SELL (seller_id, product_id)
+values (11589, 311);
+insert into SELL (seller_id, product_id)
+values (11589, 409);
+insert into SELL (seller_id, product_id)
+values (11591, 199);
+insert into SELL (seller_id, product_id)
+values (11592, 411);
+insert into SELL (seller_id, product_id)
+values (11593, 458);
+insert into SELL (seller_id, product_id)
+values (11595, 295);
+insert into SELL (seller_id, product_id)
+values (11597, 38);
+insert into SELL (seller_id, product_id)
+values (11597, 441);
+insert into SELL (seller_id, product_id)
+values (11598, 22);
+insert into SELL (seller_id, product_id)
+values (11598, 232);
+insert into SELL (seller_id, product_id)
+values (11598, 442);
+insert into SELL (seller_id, product_id)
+values (11602, 7);
+insert into SELL (seller_id, product_id)
+values (11603, 23);
+insert into SELL (seller_id, product_id)
+values (11604, 402);
+insert into SELL (seller_id, product_id)
+values (11607, 372);
+insert into SELL (seller_id, product_id)
+values (11607, 431);
+insert into SELL (seller_id, product_id)
+values (11611, 475);
+insert into SELL (seller_id, product_id)
+values (11613, 156);
 insert into SELL (seller_id, product_id)
 values (11614, 146);
+insert into SELL (seller_id, product_id)
+values (11614, 357);
+insert into SELL (seller_id, product_id)
+values (11617, 360);
+insert into SELL (seller_id, product_id)
+values (11618, 172);
+insert into SELL (seller_id, product_id)
+values (11619, 351);
+insert into SELL (seller_id, product_id)
+values (11623, 233);
+insert into SELL (seller_id, product_id)
+values (11623, 377);
+insert into SELL (seller_id, product_id)
+values (11624, 487);
+insert into SELL (seller_id, product_id)
+values (11625, 358);
+insert into SELL (seller_id, product_id)
+values (11627, 256);
+insert into SELL (seller_id, product_id)
+values (11628, 83);
+insert into SELL (seller_id, product_id)
+values (11628, 232);
+commit;
+prompt 400 records committed...
+insert into SELL (seller_id, product_id)
+values (11629, 318);
+insert into SELL (seller_id, product_id)
+values (11632, 17);
+insert into SELL (seller_id, product_id)
+values (11636, 362);
+insert into SELL (seller_id, product_id)
+values (11637, 161);
+insert into SELL (seller_id, product_id)
+values (11637, 289);
+insert into SELL (seller_id, product_id)
+values (11640, 265);
+insert into SELL (seller_id, product_id)
+values (11641, 46);
+insert into SELL (seller_id, product_id)
+values (11641, 267);
+insert into SELL (seller_id, product_id)
+values (11643, 149);
+insert into SELL (seller_id, product_id)
+values (11645, 8);
+insert into SELL (seller_id, product_id)
+values (11647, 16);
+insert into SELL (seller_id, product_id)
+values (11647, 445);
+insert into SELL (seller_id, product_id)
+values (11651, 38);
+insert into SELL (seller_id, product_id)
+values (11651, 52);
+insert into SELL (seller_id, product_id)
+values (11651, 147);
+insert into SELL (seller_id, product_id)
+values (11652, 64);
+insert into SELL (seller_id, product_id)
+values (11654, 167);
+insert into SELL (seller_id, product_id)
+values (11655, 133);
+insert into SELL (seller_id, product_id)
+values (11656, 380);
+insert into SELL (seller_id, product_id)
+values (11657, 268);
+insert into SELL (seller_id, product_id)
+values (11657, 474);
+insert into SELL (seller_id, product_id)
+values (11658, 401);
+insert into SELL (seller_id, product_id)
+values (11660, 315);
+insert into SELL (seller_id, product_id)
+values (11661, 331);
+insert into SELL (seller_id, product_id)
+values (11664, 83);
+insert into SELL (seller_id, product_id)
+values (11665, 255);
+insert into SELL (seller_id, product_id)
+values (11667, 82);
+insert into SELL (seller_id, product_id)
+values (11668, 46);
+insert into SELL (seller_id, product_id)
+values (11668, 90);
+insert into SELL (seller_id, product_id)
+values (11668, 226);
+insert into SELL (seller_id, product_id)
+values (11669, 210);
+insert into SELL (seller_id, product_id)
+values (11670, 294);
+insert into SELL (seller_id, product_id)
+values (11672, 282);
+insert into SELL (seller_id, product_id)
+values (11674, 219);
+insert into SELL (seller_id, product_id)
+values (11675, 266);
+insert into SELL (seller_id, product_id)
+values (11676, 206);
+insert into SELL (seller_id, product_id)
+values (11678, 411);
+insert into SELL (seller_id, product_id)
+values (11680, 9);
+insert into SELL (seller_id, product_id)
+values (11681, 172);
+insert into SELL (seller_id, product_id)
+values (11683, 77);
+insert into SELL (seller_id, product_id)
+values (11683, 219);
+insert into SELL (seller_id, product_id)
+values (11684, 281);
+insert into SELL (seller_id, product_id)
+values (11687, 218);
+insert into SELL (seller_id, product_id)
+values (11689, 35);
+insert into SELL (seller_id, product_id)
+values (11689, 225);
+insert into SELL (seller_id, product_id)
+values (11689, 421);
+insert into SELL (seller_id, product_id)
+values (11691, 176);
+insert into SELL (seller_id, product_id)
+values (11691, 271);
+insert into SELL (seller_id, product_id)
+values (11692, 41);
+insert into SELL (seller_id, product_id)
+values (11694, 471);
+insert into SELL (seller_id, product_id)
+values (11695, 339);
+insert into SELL (seller_id, product_id)
+values (11695, 417);
+insert into SELL (seller_id, product_id)
+values (11697, 25);
+insert into SELL (seller_id, product_id)
+values (11700, 215);
+insert into SELL (seller_id, product_id)
+values (11700, 413);
+insert into SELL (seller_id, product_id)
+values (11700, 436);
+insert into SELL (seller_id, product_id)
+values (11701, 60);
+insert into SELL (seller_id, product_id)
+values (11702, 72);
+insert into SELL (seller_id, product_id)
+values (11702, 142);
+insert into SELL (seller_id, product_id)
+values (11702, 153);
+insert into SELL (seller_id, product_id)
+values (11710, 235);
+insert into SELL (seller_id, product_id)
+values (11710, 488);
+insert into SELL (seller_id, product_id)
+values (11711, 436);
+insert into SELL (seller_id, product_id)
+values (11712, 312);
+insert into SELL (seller_id, product_id)
+values (11713, 247);
+insert into SELL (seller_id, product_id)
+values (11713, 277);
+insert into SELL (seller_id, product_id)
+values (11715, 88);
+insert into SELL (seller_id, product_id)
+values (11715, 178);
+insert into SELL (seller_id, product_id)
+values (11718, 437);
+insert into SELL (seller_id, product_id)
+values (11719, 300);
+insert into SELL (seller_id, product_id)
+values (11719, 380);
+insert into SELL (seller_id, product_id)
+values (11721, 463);
+insert into SELL (seller_id, product_id)
+values (11722, 247);
+insert into SELL (seller_id, product_id)
+values (11722, 376);
+insert into SELL (seller_id, product_id)
+values (11726, 481);
+insert into SELL (seller_id, product_id)
+values (11727, 494);
+insert into SELL (seller_id, product_id)
+values (11729, 371);
+insert into SELL (seller_id, product_id)
+values (11730, 46);
+insert into SELL (seller_id, product_id)
+values (11730, 244);
+insert into SELL (seller_id, product_id)
+values (11730, 481);
+insert into SELL (seller_id, product_id)
+values (11731, 152);
+insert into SELL (seller_id, product_id)
+values (11732, 152);
+insert into SELL (seller_id, product_id)
+values (11734, 199);
+insert into SELL (seller_id, product_id)
+values (11736, 195);
+insert into SELL (seller_id, product_id)
+values (11742, 349);
+insert into SELL (seller_id, product_id)
+values (11743, 10);
+insert into SELL (seller_id, product_id)
+values (11745, 433);
+insert into SELL (seller_id, product_id)
+values (11746, 171);
+insert into SELL (seller_id, product_id)
+values (11746, 389);
+insert into SELL (seller_id, product_id)
+values (11749, 338);
+insert into SELL (seller_id, product_id)
+values (11749, 412);
+insert into SELL (seller_id, product_id)
+values (11750, 311);
+insert into SELL (seller_id, product_id)
+values (11750, 342);
+insert into SELL (seller_id, product_id)
+values (11751, 136);
+insert into SELL (seller_id, product_id)
+values (11753, 188);
+insert into SELL (seller_id, product_id)
+values (11753, 280);
+insert into SELL (seller_id, product_id)
+values (11753, 484);
+insert into SELL (seller_id, product_id)
+values (11758, 428);
+insert into SELL (seller_id, product_id)
+values (11758, 487);
 commit;
 prompt 499 records loaded
 prompt Enabling foreign key constraints for ORDERS...
