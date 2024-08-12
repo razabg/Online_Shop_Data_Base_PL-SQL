@@ -4,3 +4,4 @@ This project involves the design and implementation of a comprehensive database 
 The database includes tables for sellers, categories, order details, buyers, products, orders, reviews,
 and associations between these entities. The project leverages advanced SQL and PL/SQL programming to ensure robust and efficient data management.
 
+![Uploading image.png…]()
